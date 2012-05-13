@@ -1,0 +1,11 @@
+<li class="span3 product">
+  <div class="thumbnail">
+		<%= image_tag("http://placehold.it/255x180", :alt => "#{product.brand.name} #{product.title}", :title => "#{product.brand.name} #{product.title}") %>
+    <h4 class="title"><%= link_to "#{product.brand.name} #{product.title}", product %></h4>
+    <div class="buy">
+    	<p><span class="price"><%= number_to_euro(product.price) %></span></p>
+			<p><form><input class="btn btn-success" type="button" value="Buy Now"></form>
+				<form><input class="btn" type="button" value="Add to Cart"></form></p>
+    </div>
+  </div>
+</li>

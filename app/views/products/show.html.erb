@@ -1,0 +1,51 @@
+<div class="span9 product-info">
+	<% if notice %>
+		<div class="alert alert-info">
+			<a class="close" data-dismiss="alert" href="#">×</a>
+			<%= notice %>
+		</div>
+	<% end %>
+	<h1><%= @product.brand.name %></h1>
+	<h2><%= @product.title %></h2>
+	<div class="row">
+		<div class="span4">
+			<div class="thumbnail">
+				<%= image_tag("http://placehold.it/360x250", :alt => "#{@product.brand.name} #{@product.title}", :title => "#{@product.brand.name} #{@product.title}") %>
+			</div>
+		</div>
+		<div class="span5">
+			<p><%= @product.description %></p>
+			<div class="buy">
+      	<p><span class="price">Price: <%= number_to_euro(@product.price) %></span></p>
+				<p><form><input class="btn btn-success" type="button" value="Buy Now"></form>
+					<form><input class="btn" type="button" value="Add to Cart"></form></p>
+      </div>
+			<h3>Properties</h3>
+			<table class="table table-condensed">
+				<tr>
+					<td>Length</td>
+					<td>8 cm</td>
+				</tr>
+				<tr>
+					<td>Width</td>
+					<td>4 cm</td>
+				</tr>
+				<tr>
+					<td>Weight</td>
+					<td>110 g</td>
+				</tr>
+				<tr>
+					<td>Option</td>
+					<td>Chrome</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span9">
+			<h2>About <%= @product.brand.name %></h2>
+			<p><%= @product.brand.description %></p>
+		</div>
+	</div>
+	<%= link_to "Edit", edit_product_path %>
+</div><!--/span-->

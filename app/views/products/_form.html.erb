@@ -1,0 +1,54 @@
+<div class="span9">
+<%= form_for @product, :html => { :class => "form-horizontal" } do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+		<fieldset><div class="control-group">
+    	<%= f.label :category, :class => "control-label" %>
+    	<div class="controls">
+    		<%= collection_select(:product, :category_id, @categories, :id, :name, {:prompt => false })  %>
+    	</div>
+		</div>
+		
+			<div class="control-group">
+	    	<%= f.label :brand, :class => "control-label" %>
+	    	<div class="controls">
+	    		<%= collection_select(:product, :brand_id, @brands, :id, :name, {:prompt => false })  %>
+	    	</div>
+			</div>
+			
+			<div class="control-group">
+	    	<%= f.label :title, :class => "control-label" %>
+	    	<div class="controls">
+	    		<%= f.text_field :title, :class => "input-xlarge" %>
+	    	</div>
+			</div>
+			
+			<div class="control-group">
+	    	<%= f.label :description, :class => "control-label" %>
+	    	<div class="controls">
+	    		<%= f.text_area :description, :rows => 10, :class => "input-xlarge"  %>
+	    	</div>
+			</div>
+			
+			<div class="control-group">
+	    	<%= f.label :price, :class => "control-label" %>
+	    	<div class="controls">
+	    		<%= f.text_field :price, :class => "input-small" %>
+	    	</div>
+			</div>
+
+			<div class="form-actions">
+	    	<%= f.submit :class => "btn btn-primary" %>
+			</div>
+		</fieldset>
+<% end %>
+</div>

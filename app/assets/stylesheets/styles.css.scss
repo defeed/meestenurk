@@ -1,0 +1,46 @@
+body {
+	background: url('bgnoise.gif');
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+.sidebar-nav {
+  padding: 9px 0;
+}
+
+.product {
+	max-width: 265px;
+}
+
+.product .thumbnail {
+	background: #fff;
+}
+
+.product .thumbnail img {
+	padding-bottom: 15px;
+}
+.product .title {
+	height: 60px;
+	text-align: center;
+}
+
+.product .buy {
+	text-align: center;
+	margin: 5px auto;
+}
+
+.product .price, .product-info .price {
+	font-size: 2em;
+	font-weight: bold;
+	margin: 10px 0;
+}
+
+.buy form {
+	display: inline;
+}
+
+.buy .btn {
+	margin: 3px;
+}
+
+@import "bootstrap";
+@import "bootstrap-responsive";
