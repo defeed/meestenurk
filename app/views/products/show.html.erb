@@ -10,7 +10,7 @@
 	<div class="row">
 		<div class="span4">
 			<div class="thumbnail">
-				<%= image_tag("http://placehold.it/360x250", :alt => "#{@product.brand.name} #{@product.title}", :title => "#{@product.brand.name} #{@product.title}") %>
+				<%= image_tag(@product.picture.url(:medium), :alt => "#{@product.brand.name} #{@product.title}", :title => "#{@product.brand.name} #{@product.title}") %>
 			</div>
 		</div>
 		<div class="span5">
