@@ -7,6 +7,9 @@ class Product < ActiveRecord::Base
   validates :title, :description, :presence => true
   validates :title, :uniqueness => true, :length => { :minimum => 5 }
   validates :price, :numericality => { greater_than_or_equal_to: 0.10 }
+  validates_attachment_content_type :picture,
+                                    :content_type => /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)$/,
+                                    :message => "may be only JPG, PNG or GIF. No picture will work as well."
   
   has_attached_file :picture,
                     :styles => {
