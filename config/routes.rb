@@ -4,7 +4,7 @@ Meestenurk::Application.routes.draw do
   resources :categories
   resources :brands
   
-  root :to => 'products#index', :as => 'products'
+  root :to => 'products#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

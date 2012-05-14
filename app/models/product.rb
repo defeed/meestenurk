@@ -8,6 +8,11 @@ class Product < ActiveRecord::Base
   validates :title, :uniqueness => true, :length => { :minimum => 5 }
   validates :price, :numericality => { greater_than_or_equal_to: 0.10 }
   
-  has_attached_file :picture, :styles => { :small  => "255x180", :medium => "360x250", :large  => "500x500" }
+  has_attached_file :picture,
+                    :styles => {
+                      :small  => "255x180",
+                      :medium => "360x250",
+                      :large  => "500x500" },
+                    :default_url => "/assets/missing_:style.png"
   
 end
