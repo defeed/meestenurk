@@ -1,25 +1,34 @@
-<%= form_for(@brand) do |f| %>
-  <% if @brand.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@brand.errors.count, "error") %> prohibited this brand from being saved:</h2>
+<%= form_for @brand, :html => { :class => "form-vertical" } do |f| %>
+<% if @brand.errors.any? %>
+  <div class="alert alert-error">
+		<a class="close" data-dismiss="alert" href="#">×</a>
+    <h4 class="alert-heading">Oh snap! We got <%= pluralize(@brand.errors.count, "problem") %> here. Fix them and we're fine.</h4>
 
-      <ul>
-      <% @brand.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <ul>
+    <% @brand.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<fieldset>	
+	<div class="control-group">
+  	<%= f.label :name, :class => "control-label" %>
+  	<div class="controls">
+  		<%= f.text_field :name, :class => "input-xlarge" %>
+  	</div>
+	</div>
+	
+	<div class="control-group">
+  	<%= f.label :description, :class => "control-label" %>
+  	<div class="controls">
+  		<%= f.text_area :description, :rows => 10, :class => "input-xlarge"  %>
+  	</div>
+	</div>
+	
+	<div class="form-actions">
+  	<%= f.submit :class => "btn btn-primary" %>
+	</div>
+</fieldset>
 <% end %>

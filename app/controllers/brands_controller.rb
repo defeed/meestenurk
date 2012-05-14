@@ -4,6 +4,9 @@ class BrandsController < ApplicationController
   def index
     @brands = Brand.all
     @categories = Category.all
+    
+    @title = "Brands"
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @brands }
@@ -42,6 +45,8 @@ class BrandsController < ApplicationController
   # GET /brands/1/edit
   def edit
     @brand = Brand.find(params[:id])
+    @brands = Brand.all
+    @categories = Category.all
   end
 
   # POST /brands
@@ -51,7 +56,7 @@ class BrandsController < ApplicationController
 
     respond_to do |format|
       if @brand.save
-        format.html { redirect_to @brand, notice: 'Brand was successfully created.' }
+        format.html { redirect_to brands_path, notice: 'Brand was successfully created.' }
         format.json { render json: @brand, status: :created, location: @brand }
       else
         format.html { render action: "new" }
@@ -67,7 +72,7 @@ class BrandsController < ApplicationController
 
     respond_to do |format|
       if @brand.update_attributes(params[:brand])
-        format.html { redirect_to @brand, notice: 'Brand was successfully updated.' }
+        format.html { redirect_to brands_path, notice: 'Brand was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
