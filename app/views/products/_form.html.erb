@@ -1,8 +1,8 @@
-<div class="span9">
-<%= form_for @product, :html => { :class => "form-horizontal", :multipart => true } do |f| %>
+<%= form_for @product, :html => { :class => "form-vertical", :multipart => true } do |f| %>
   <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+    <div class="alert alert-error">
+			<a class="close" data-dismiss="alert" href="#">×</a>
+      <h4 class="alert-heading">Oh snap! We got <%= pluralize(@product.errors.count, "problem") %> here. Fix them and we're fine.</h4>
 
       <ul>
       <% @product.errors.full_messages.each do |msg| %>
@@ -11,16 +11,18 @@
       </ul>
     </div>
   <% end %>
-		<fieldset>
+		<fieldset>			
 			<div class="control-group">
 	    	<div class="controls">
-	    		<%= f.file_field :picture %>
+				<div class="thumbnail">
+					<%= image_tag @product.picture.url(:medium) %>
+				</div>
 	    	</div>
 			</div>
 			
 			<div class="control-group">
 	    	<div class="controls">
-   				<%= image_tag @product.picture.url(:medium) %>
+	    		<%= f.file_field :picture %>
 	    	</div>
 			</div>
 			
@@ -64,4 +66,3 @@
 			</div>
 		</fieldset>
 <% end %>
-</div>

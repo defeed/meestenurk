@@ -1,6 +1,4 @@
-<h1>Editing product</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+<div class="span9">
+	<h1><%= "#{@product.brand.name} #{@product.title}" %></h1>
+	<%= render 'form' %>
+</div>

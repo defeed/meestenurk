@@ -46,6 +46,8 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(params[:product])
+    @brands = Brand.all
+    @categories = Category.all
 
     respond_to do |format|
       if @product.save
@@ -62,6 +64,8 @@ class ProductsController < ApplicationController
   # PUT /products/1.json
   def update
     @product = Product.find(params[:id])
+    @brands = Brand.all
+    @categories = Category.all
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
