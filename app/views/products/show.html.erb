@@ -5,9 +5,8 @@
 			<%= notice %>
 		</div>
 	<% end %>
-	<div class="page-header">
-		<h1><%= "#{@product.brand.name} #{@product.title}" %></h1>
-	</div>
+	<h1><%= "#{@product.brand.name} #{@product.title}" %></h1>
+	<hr>
 	<div class="row">
 		<div class="span4">
 			<div class="thumbnail">
@@ -42,6 +41,7 @@
 			</table>
 		</div>
 	</div>
+	<hr>
 	<div class="row">
 		<div class="span9">
 			<h2>About <%= @product.brand.name %></h2>
