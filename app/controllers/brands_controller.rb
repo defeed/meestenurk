@@ -14,7 +14,7 @@ class BrandsController < ApplicationController
   # GET /brands/1.json
   def show
     @brand = Brand.find(params[:id])
-    @products = @brand.products
+    @products = @brand.products.paginate(:page => params[:page], :per_page => 15)
     @brands = Brand.all
     @categories = Category.all
     respond_to do |format|

@@ -14,7 +14,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1.json
   def show
     @category = Category.find(params[:id])
-    @products = @category.products
+    @products = @category.products.paginate(:page => params[:page], :per_page => 15)
     @brands = Brand.all
     @categories = Category.all
 
