@@ -17,6 +17,9 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @brands = Brand.all
     @categories = Category.all
+    
+    @title = "#{@product.brand.name} #{@product.title}"
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }
@@ -29,6 +32,9 @@ class ProductsController < ApplicationController
     @product = Product.new
     @brands = Brand.all
     @categories = Category.all
+    
+    @title = "New Product"
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @product }
@@ -40,6 +46,8 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @brands = Brand.all
     @categories = Category.all
+    
+    @title = "#{@product.brand.name} #{@product.title}"
   end
 
   # POST /products

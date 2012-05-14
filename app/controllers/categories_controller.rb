@@ -18,6 +18,8 @@ class CategoriesController < ApplicationController
     @brands = Brand.all
     @categories = Category.all
 
+    @title = @category.name
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @category }

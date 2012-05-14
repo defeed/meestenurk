@@ -17,6 +17,9 @@ class BrandsController < ApplicationController
     @products = @brand.products.paginate(:page => params[:page], :per_page => 15)
     @brands = Brand.all
     @categories = Category.all
+    
+    @title = @brand.name
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @brand }
