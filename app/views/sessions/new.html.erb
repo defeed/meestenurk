@@ -1,0 +1,23 @@
+<div class="span9">
+	<%= form_tag sessions_path do %>
+	<fieldset>	
+		<div class="control-group">
+	  	<%= label_tag :name, "Username", :class => "control-label" %>
+	  	<div class="controls">
+	  		<%= text_field_tag :name, params[:name] %>
+	  	</div>
+		</div>
+
+		<div class="control-group">
+	  	<%= label_tag :password, "Password", :class => "control-label" %>
+	  	<div class="controls">
+	  		<%= password_field_tag :password %>
+	  	</div>
+		</div>
+
+		<div class="form-actions">
+	  	<%= submit_tag "Login", :class => "btn btn-primary" %>
+		</div>
+	</fieldset>
+	<% end %>
+</div>

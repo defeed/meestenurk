@@ -1,32 +1,23 @@
 <div class="span9">
-	<% if notice %>
-		<div class="alert alert-info">
-			<a class="close" data-dismiss="alert" href="#">×</a>
-			<%= notice %>
-		</div>
-	<% end %>
 	<h1>Brands</h1>
 	<hr>
-	<table class="table">
+	<p><%= link_to 'New Brand', new_brand_path, :class => "btn" %></p>
+	<table class="table table-striped table-bordered">
 		<thead>
 			<tr>
 		    <th class="span2">Name</th>
 		    <th>Description</th>
-		    <th class="span2"></th>
+		    <th class="span1"></th>
 		  </tr>
 		</thead>
 		<tbody>
 	<% @brands.each do |brand| %>
 	  	<tr>
-		    <td><%= brand.name %></td>
+		    <td><%= link_to brand.name, edit_brand_path(brand) %></td>
 		    <td><%= brand.description %></td>
-		    <td>
-					<%= link_to "Edit", edit_brand_path(brand), :class => "btn" %> 
-					<%= link_to "Delete", brand, confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger" %>
-				</td>
+		    <td><%= link_to "Delete", brand, confirm: 'Are you sure?', method: :delete, :class => "btn btn-mini btn-danger" %></td>
 		  </tr>
 	<% end %>
 		</tbody>
 	</table>
-	<%= link_to 'New Brand', new_brand_path, :class => "btn" %>
 </div>

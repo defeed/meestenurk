@@ -1,0 +1,21 @@
+<div class="span9">
+	<h1>Users</h1>
+	<hr>
+	<p><%= link_to 'New User', new_user_path, :class => "btn" %></p>
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr>
+		    <th>Username</th>
+		    <th class="span1"></th>
+		  </tr>
+		</thead>
+		<tbody>
+		<% @users.each do |user| %>
+	  	<tr>
+		    <td><%= link_to user.name, edit_user_path(user) %></td>
+		    <td><%= link_to "Delete", user, confirm: 'Are you sure?', method: :delete, :class => "btn btn-mini btn-danger" %></td>
+		  </tr>
+		<% end %>
+		</tbody>
+	</table>
+</div>

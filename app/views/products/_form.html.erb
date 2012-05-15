@@ -14,9 +14,9 @@
 		<fieldset>			
 			<div class="control-group">
 	    	<div class="controls">
-				<div class="thumbnail">
-					<%= image_tag @product.picture.url(:medium) %>
-				</div>
+					<div class="thumbnail">
+						<%= image_tag @product.picture.url(:medium) %>
+					</div>
 	    	</div>
 			</div>
 			
@@ -63,6 +63,7 @@
 
 			<div class="form-actions">
 	    	<%= f.submit :class => "btn btn-primary" %>
+				<%= link_to("Show Product", @product, :class => "btn") unless @product.new_record? %>
 			</div>
 		</fieldset>
 <% end %>

@@ -1,10 +1,9 @@
 class BrandsController < ApplicationController
+  before_filter :get_brands_and_categories
+  before_filter :authorize, :except => :show
   # GET /brands
   # GET /brands.json
   def index
-    @brands = Brand.all
-    @categories = Category.all
-    
     @title = "Brands"
     
     respond_to do |format|
@@ -18,8 +17,6 @@ class BrandsController < ApplicationController
   def show
     @brand = Brand.find(params[:id])
     @products = @brand.products.paginate(:page => params[:page], :per_page => 15)
-    @brands = Brand.all
-    @categories = Category.all
     
     @title = @brand.name
     
@@ -33,8 +30,7 @@ class BrandsController < ApplicationController
   # GET /brands/new.json
   def new
     @brand = Brand.new
-    @brands = Brand.all
-    @categories = Category.all
+    @title = "New Brand"
 
     respond_to do |format|
       format.html # new.html.erb
@@ -45,8 +41,7 @@ class BrandsController < ApplicationController
   # GET /brands/1/edit
   def edit
     @brand = Brand.find(params[:id])
-    @brands = Brand.all
-    @categories = Category.all
+    @title = @brand.name
   end
 
   # POST /brands
@@ -56,7 +51,7 @@ class BrandsController < ApplicationController
 
     respond_to do |format|
       if @brand.save
-        format.html { redirect_to brands_path, notice: 'Brand was successfully created.' }
+        format.html { redirect_to brands_path, notice: "Brand #{@brand.name} was added." }
         format.json { render json: @brand, status: :created, location: @brand }
       else
         format.html { render action: "new" }
@@ -72,7 +67,7 @@ class BrandsController < ApplicationController
 
     respond_to do |format|
       if @brand.update_attributes(params[:brand])
-        format.html { redirect_to brands_path, notice: 'Brand was successfully updated.' }
+        format.html { redirect_to brands_path, notice: "Brand #{@brand.name} was updated." }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -85,11 +80,12 @@ class BrandsController < ApplicationController
   # DELETE /brands/1.json
   def destroy
     @brand = Brand.find(params[:id])
-    @brand.destroy
 
     respond_to do |format|
-      format.html { redirect_to brands_url }
+      format.html { redirect_to brands_url, notice: "Brand #{@brand.name} was removed. I hope you know what you're doing, mate." }
       format.json { head :no_content }
     end
+    
+    @brand.destroy
   end
 end

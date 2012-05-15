@@ -1,10 +1,12 @@
 class ProductsController < ApplicationController
+  before_filter :get_brands_and_categories
+  before_filter :authorize, :except => :show
   # GET /products
   # GET /products.json
   def index
     @products = Product.all
-    @brands = Brand.all
-    @categories = Category.all
+    @title = "Products"
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
@@ -15,9 +17,6 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
-    @brands = Brand.all
-    @categories = Category.all
-    
     @title = "#{@product.brand.name} #{@product.title}"
     
     respond_to do |format|
@@ -30,9 +29,6 @@ class ProductsController < ApplicationController
   # GET /products/new.json
   def new
     @product = Product.new
-    @brands = Brand.all
-    @categories = Category.all
-    
     @title = "New Product"
     
     respond_to do |format|
@@ -44,9 +40,6 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
-    @brands = Brand.all
-    @categories = Category.all
-    
     @title = "#{@product.brand.name} #{@product.title}"
   end
 
@@ -54,12 +47,11 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(params[:product])
-    @brands = Brand.all
-    @categories = Category.all
+    @title = "New Product"
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        format.html { redirect_to products_url, notice: "#{@product.brand.name} #{@product.title} was created." }
         format.json { render json: @product, status: :created, location: @product }
       else
         format.html { render action: "new" }
@@ -72,12 +64,10 @@ class ProductsController < ApplicationController
   # PUT /products/1.json
   def update
     @product = Product.find(params[:id])
-    @brands = Brand.all
-    @categories = Category.all
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.html { redirect_to products_url, notice: "#{@product.brand.name} #{@product.title} was updated." }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -92,11 +82,12 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.picture = nil
     @product.save
-    @product.destroy
 
     respond_to do |format|
-      format.html { redirect_to store_url }
+      format.html { redirect_to store_url, notice: "#{@product.brand.name} #{@product.title} was removed. Amen!" }
       format.json { head :no_content }
     end
+    
+    @product.destroy
   end
 end

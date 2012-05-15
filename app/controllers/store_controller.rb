@@ -1,7 +1,6 @@
 class StoreController < ApplicationController
+  before_filter :get_brands_and_categories
   def index
     @products = Product.all
-    @brands = Brand.all
-    @categories = Category.all
   end
 end

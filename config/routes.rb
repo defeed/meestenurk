@@ -1,12 +1,16 @@
 Meestenurk::Application.routes.draw do
-  
-  get 'store/index'
 
   resources :products
   resources :categories
   resources :brands
+  resources :users
+
+  resources :sessions, :only => [:new, :create, :destroy]
   
   root :to => 'store#index', :as => 'store'
+
+  match '/login'  => 'sessions#new'
+  match '/logout' => 'sessions#destroy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

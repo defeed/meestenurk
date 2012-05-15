@@ -1,10 +1,9 @@
 class CategoriesController < ApplicationController
+  before_filter :get_brands_and_categories
+  before_filter :authorize, :except => :show
   # GET /categories
   # GET /categories.json
   def index
-    @brands = Brand.all
-    @categories = Category.all
-    
     @title = "Categories"
     
     respond_to do |format|
@@ -18,8 +17,6 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @products = @category.products.paginate(:page => params[:page], :per_page => 15)
-    @brands = Brand.all
-    @categories = Category.all
 
     @title = @category.name
 
@@ -33,8 +30,7 @@ class CategoriesController < ApplicationController
   # GET /categories/new.json
   def new
     @category = Category.new
-    @brands = Brand.all
-    @categories = Category.all
+    @title = "New Category"
 
     respond_to do |format|
       format.html # new.html.erb
@@ -45,8 +41,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1/edit
   def edit
     @category = Category.find(params[:id])
-    @brands = Brand.all
-    @categories = Category.all
+    @title = @category.name
   end
 
   # POST /categories
@@ -56,7 +51,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to categories_path, notice: 'Category was successfully created.' }
+        format.html { redirect_to categories_path, notice: "Category #{@category.name} was added." }
         format.json { render json: @category, status: :created, location: @category }
       else
         format.html { render action: "new" }
@@ -72,7 +67,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.update_attributes(params[:category])
-        format.html { redirect_to categories_path, notice: 'Category was successfully updated.' }
+        format.html { redirect_to categories_path, notice: "Category #{@category.name} was updated." }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -85,11 +80,12 @@ class CategoriesController < ApplicationController
   # DELETE /categories/1.json
   def destroy
     @category = Category.find(params[:id])
-    @category.destroy
 
     respond_to do |format|
-      format.html { redirect_to categories_url }
+      format.html { redirect_to categories_url, notice: "Category #{@category.name} was removed. I hope you know what you're doing, mate." }
       format.json { head :no_content }
     end
+    
+    @category.destroy
   end
 end

@@ -8,7 +8,7 @@ body {
 }
 
 .product {
-	max-width: 265px;
+	max-width: 270px;
 }
 
 .thumbnail {
@@ -18,6 +18,11 @@ body {
 .product .thumbnail img {
 	padding-bottom: 15px;
 }
+
+form .controls .thumbnail {
+	max-width: 360px;
+}
+
 .product .title {
 	height: 60px;
 	text-align: center;
