@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_filter :get_brands_and_categories
   before_filter :authorize
+  before_filter :get_cart
   # GET /users
   # GET /users.json
   def index

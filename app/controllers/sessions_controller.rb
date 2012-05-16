@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   before_filter :get_brands_and_categories
+  before_filter :get_cart
   
   def new
     @title = "Store Management"

@@ -1,0 +1,6 @@
+<ul class="nav nav-list">
+	<li class="nav-header">Your Cart</li>
+	<li>Total Due: <span class="badge" id="amount_due"><%= number_to_euro(cart.total_price) %></span></li>
+	<li><%= link_to "View Cart & Checkout", cart_path(cart) %></li>
+	<li><%= link_to "Empty Cart", cart, method: :delete %></li>
+</ul>

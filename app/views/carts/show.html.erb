@@ -1,0 +1,28 @@
+<div class="span9">
+	<h1>Your Cart</h1>
+	<hr>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Product</th>
+				<th class="span1">Qty</th>
+				<th class="span2">Price</th>
+				<th class="span2">Subtotal</th>
+			</tr>
+		</thead>
+		<% @cart.line_items.each do |item| %>
+		<tr>
+			<td><%= link_to "#{item.product.brand.name} #{item.product.title}", product_path(item.product) %></td>
+			<td><%= item.quantity %></td>
+			<td><%= number_to_euro(item.product.price) %></td>
+			<td><%= number_to_euro(item.total_price) %></td>
+		</tr>
+		<% end %>
+		<tr id="total_line">
+			<td colspan="3"><span class="pull-right">Total:</span></td>
+			<td><%= number_to_euro(@cart.total_price) %></td>
+		</tr>
+	</table>
+	<%= link_to "Empty Cart", @cart, method: :delete, :class => "btn" %>
+	<%= link_to "Checkout", "#", :class => "btn btn-success" %>
+</div>

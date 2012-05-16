@@ -1,5 +1,9 @@
 Meestenurk::Application.routes.draw do
 
+  resources :line_items
+
+  resources :carts
+
   resources :products
   resources :categories
   resources :brands

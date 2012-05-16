@@ -17,8 +17,10 @@
 			<p><%= @product.description %></p>
 			<div class="buy">
       	<p><span class="price">Price: <%= number_to_euro(@product.price) %></span></p>
-				<p><form><input class="btn btn-success" type="button" value="Buy Now"></form>
-					<form><input class="btn" type="button" value="Add to Cart"></form></p>
+				<p>
+					<%= button_to "Buy Now", line_items_path(:product_id => @product), :class => "btn btn-success" %>
+					<%= button_to "Add to Cart", line_items_path(:product_id => @product), :class => "btn", :remote => true %>
+				</p>
       </div>
 			<h3>Properties</h3>
 			<table class="table table-condensed">

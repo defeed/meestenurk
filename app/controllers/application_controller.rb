@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
     @categories = Category.all
   end
   
+  def get_cart
+    @cart = current_cart
+  end
+  
   private
   
     def current_user
@@ -15,5 +19,13 @@ class ApplicationController < ActionController::Base
     
     def authorize
       redirect_to login_url, alert: "You need to log in to access this page." if current_user.nil?
+    end
+    
+    def current_cart
+      Cart.find(session[:cart_id])
+    rescue ActiveRecord::RecordNotFound
+      cart = Cart.create
+      session[:cart_id] = cart.id
+      cart
     end
 end

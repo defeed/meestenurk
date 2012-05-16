@@ -1,6 +1,7 @@
 class BrandsController < ApplicationController
   before_filter :get_brands_and_categories
   before_filter :authorize, :except => :show
+  before_filter :get_cart
   # GET /brands
   # GET /brands.json
   def index
