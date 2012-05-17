@@ -1,4 +1,5 @@
 $('#cart').html("<%=j render @cart %>");
 
 $('#amount_due').addClass('badge-success').
-	animate({'background-color':'#999999'}, 2000);
+	animate({'background-color':'#999999'}, 2000).
+	removeClass('badge-success');

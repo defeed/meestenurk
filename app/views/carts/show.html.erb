@@ -5,16 +5,20 @@
 		<thead>
 			<tr>
 				<th>Product</th>
-				<th class="cart-cell">Quantity</th>
-				<th class="cart-cell">Price</th>
-				<th class="cart-cell">Subtotal</th>
+				<th class="cell-70px">Quantity</th>
+				<th class="cell-70px">Price</th>
+				<th class="cell-70px">Subtotal</th>
 				<th></th>
 			</tr>
 		</thead>
 		<% @cart.line_items.each do |item| %>
 		<tr>
 			<td><%= link_to "#{item.product.brand.name} #{item.product.title}", product_path(item.product) %></td>
-			<td><i class="icon icon-minus"></i> <span class="badge"><%= item.quantity %></span> <i class="icon icon-plus"></i></td>
+			<td>
+				<%= link_to content_tag(:i, "", :class => "icon icon-minus", :title => "Decrement"), decrement_line_item_path(item), :method => :post %>
+				<span class="badge"><%= item.quantity %></span>
+				<%= link_to content_tag(:i, "", :class => "icon icon-plus", :title => "Increment"), increment_line_item_path(item), :method => :post %>
+			</td>
 			<td><%= number_to_euro(item.product.price) %></td>
 			<td><%= number_to_euro(item.total_price) %></td>
 			<td><%= link_to content_tag(:i, "", :class => "icon icon-remove", :title => "Remove from cart"), item, :method => :delete %></td>

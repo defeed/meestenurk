@@ -15,6 +15,11 @@ body {
 	background: #fff;
 }
 
+.product .thumbnail a img {
+	width: 100%;
+	padding: 0;
+}
+
 .product .thumbnail img {
 	padding-bottom: 15px;
 }
@@ -50,6 +55,8 @@ form .controls .thumbnail {
 .buy .btn {
 	margin: 3px;
 }
+
+.cell-70px { width: 70px; }
 
 @import "bootstrap";
 @import "bootstrap-responsive";
