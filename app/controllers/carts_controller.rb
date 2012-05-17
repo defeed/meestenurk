@@ -5,6 +5,7 @@ class CartsController < ApplicationController
   # GET /carts.json
   def index
     @carts = Cart.all
+    @title = "Carts"
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,6 +16,7 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
+    @title = "Your Cart"
     begin
       @cart = Cart.find(params[:id])
     rescue ActiveRecord::RecordNotFound

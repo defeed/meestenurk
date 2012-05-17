@@ -5,9 +5,10 @@
 		<thead>
 			<tr>
 				<th>Product</th>
-				<th class="span1">Qty</th>
-				<th class="span2">Price</th>
-				<th class="span2">Subtotal</th>
+				<th class="cart-cell">Quantity</th>
+				<th class="cart-cell">Price</th>
+				<th class="cart-cell">Subtotal</th>
+				<th></th>
 			</tr>
 		</thead>
 		<% @cart.line_items.each do |item| %>
@@ -16,11 +17,13 @@
 			<td><%= item.quantity %></td>
 			<td><%= number_to_euro(item.product.price) %></td>
 			<td><%= number_to_euro(item.total_price) %></td>
+			<td><%= link_to content_tag(:i, "", :class => "icon icon-remove", :title => "Remove from cart"), item, :method => :delete %></td>
 		</tr>
 		<% end %>
 		<tr id="total_line">
 			<td colspan="3"><span class="pull-right">Total:</span></td>
 			<td><%= number_to_euro(@cart.total_price) %></td>
+			<td></td>
 		</tr>
 	</table>
 	<%= link_to "Empty Cart", @cart, method: :delete, :class => "btn" %>
