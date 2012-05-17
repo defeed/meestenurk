@@ -14,7 +14,7 @@
 		<% @cart.line_items.each do |item| %>
 		<tr>
 			<td><%= link_to "#{item.product.brand.name} #{item.product.title}", product_path(item.product) %></td>
-			<td><%= item.quantity %></td>
+			<td><i class="icon icon-minus"></i> <span class="badge"><%= item.quantity %></span> <i class="icon icon-plus"></i></td>
 			<td><%= number_to_euro(item.product.price) %></td>
 			<td><%= number_to_euro(item.total_price) %></td>
 			<td><%= link_to content_tag(:i, "", :class => "icon icon-remove", :title => "Remove from cart"), item, :method => :delete %></td>
