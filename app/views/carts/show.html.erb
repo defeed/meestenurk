@@ -1,5 +1,5 @@
 <div class="span9">
-	<h1>Your Cart</h1>
+	<h1><%= pluralize(@cart.total_items, "Item") %> in Your Cart</h1>
 	<hr>
 	<table class="table">
 		<thead>
