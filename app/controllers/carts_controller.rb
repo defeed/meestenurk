@@ -17,6 +17,7 @@ class CartsController < ApplicationController
   # GET /carts/1.json
   def show
     @title = "Your Cart"
+    @line_items = current_cart.line_items
     begin
       @cart = Cart.find(params[:id])
     rescue ActiveRecord::RecordNotFound
