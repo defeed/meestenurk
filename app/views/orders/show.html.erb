@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @order.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @order.last_name %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @order.phone %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @order.email %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @order.address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @order.city %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @order.zip %>
+</p>
+
+<p>
+  <b>Payment method:</b>
+  <%= @order.payment_method %>
+</p>
+
+<p>
+  <b>Shipping method:</b>
+  <%= @order.shipping_method %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @order.comment %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @order.status %>
+</p>
+
+<p>
+  <b>Cart:</b>
+  <%= @order.cart_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

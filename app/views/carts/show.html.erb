@@ -18,6 +18,6 @@
 			<td></td>
 		</tr>
 	</table>
-	<%= link_to "Empty Cart", @cart, method: :delete, :class => "btn" %>
-	<%= link_to "Checkout", "#", :class => "btn btn-success" %>
+	<%= link_to "Empty Cart", @cart, :method => :delete, :class => "btn" %>
+	<%= link_to "Checkout", new_order_path, :class => "btn btn-success" %>
 </div>
