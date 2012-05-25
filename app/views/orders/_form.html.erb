@@ -1,7 +1,8 @@
-<%= form_for(@order) do |f| %>
+<%= form_for @order, :html => { :class => "form-vertical" } do |f| %>
   <% if @order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+    <div class="alert alert-error">
+			<a class="close" data-dismiss="alert" href="#">×</a>
+      <h4 class="alert-heading">Oh snap! We got <%= pluralize(@order.errors.count, "problem") %> here. Fix them and we're fine.</h4>
 
       <ul>
       <% @order.errors.full_messages.each do |msg| %>
@@ -11,55 +12,79 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br />
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :zip %><br />
-    <%= f.text_field :zip %>
-  </div>
-  <div class="field">
-    <%= f.label :payment_method %><br />
-    <%= f.text_field :payment_method %>
-  </div>
-  <div class="field">
-    <%= f.label :shipping_method %><br />
-    <%= f.text_field :shipping_method %>
-  </div>
-  <div class="field">
-    <%= f.label :comment %><br />
-    <%= f.text_area :comment %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
-  </div>
-  <div class="field">
-    <%= f.label :cart_id %><br />
-    <%= f.number_field :cart_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+	<fieldset>
+		<div class="control-group">
+    	<%= f.label :first_name, :class => "control-label" %>
+    	<div class="controls">
+    		<%= f.text_field :first_name, :class => "input-xlarge" %>
+    	</div>
+		</div>
+		
+		<div class="control-group">
+    	<%= f.label :last_name, :class => "control-label" %>
+    	<div class="controls">
+    		<%= f.text_field :last_name, :class => "input-xlarge" %>
+    	</div>
+		</div>
+		
+		<div class="control-group">
+    	<%= f.label :phone, :class => "control-label" %>
+    	<div class="controls">
+    		<%= f.text_field :phone, :class => "input-medium" %>
+    	</div>
+		</div>
+		
+		<div class="control-group">
+    	<%= f.label :email, :class => "control-label" %>
+    	<div class="controls">
+    		<%= f.text_field :email, :class => "input-medium" %>
+    	</div>
+		</div>
+		
+		<div class="control-group">
+    	<%= f.label :address, :class => "control-label" %>
+    	<div class="controls">
+    		<%= f.text_field :address, :class => "input-medium" %>
+    	</div>
+		</div>
+		
+		<div class="control-group">
+    	<%= f.label :city, :class => "control-label" %>
+    	<div class="controls">
+    		<%= f.text_field :city, :class => "input-medium" %>
+    	</div>
+		</div>
+		
+		<div class="control-group">
+    	<%= f.label :zip, "Postcode", :class => "control-label" %>
+    	<div class="controls">
+    		<%= f.text_field :zip, :class => "input-small" %>
+    	</div>
+		</div>
+		
+		<div class="control-group">
+    	<%= f.label :payment_method, "Payment Method", :class => "control-label" %>
+    	<div class="controls">
+    		<%= f.select :payment_method, [["Swedbank", "swedbank"], ["SEB", "seb"], ["Sampo Pank", "sampo"]] %>
+    	</div>
+		</div>
+		
+		<div class="control-group">
+    	<%= f.label :shipping_method, "Delivery Method", :class => "control-label" %>
+    	<div class="controls">
+    		<%= f.select :shipping_method, [["SmartPost", "smartpost"], ["Free Delivery (Tallinn)", "free_tallinn"], ["Pick-up myself", "self_pickup"]] %>
+    	</div>
+		</div>
+		
+		<div class="control-group">
+    	<%= f.label :comment, :class => "control-label" %>
+    	<div class="controls">
+    		<%= f.text_area :comment, :class => "input-xlarge", :rows => 5 %>
+    	</div>
+		</div>
+		
+		<div class="form-actions">
+    	<%= f.submit "Start Payment", :class => "btn btn-primary" %>
+		</div>
+	</fieldset>
 <% end %>
