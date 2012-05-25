@@ -5,13 +5,11 @@
 			<th class="cell-80px">Price</th>
 			<th class="cell-80px">Quantity</th>
 			<th class="cell-80px">Subtotal</th>
-			<th></th>
 		</tr>
 	</thead>
-	<%= render :partial => 'line_items/cart_item', :collection => @line_items %>
+	<%= render :partial => 'line_items/order_item', :collection => @line_items %>
 	<tr id="total_line">
 		<td colspan="3"><span class="pull-right">Total:</span></td>
 		<td><%= number_to_euro(@cart.total_price) %></td>
-		<td></td>
 	</tr>
 </table>

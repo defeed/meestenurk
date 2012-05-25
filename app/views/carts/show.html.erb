@@ -1,23 +1,7 @@
 <div class="span9">
 	<h1><%= pluralize(@cart.total_items, "Item") %> in Your Cart</h1>
 	<hr>
-	<table class="table">
-		<thead>
-			<tr>
-				<th>Product</th>
-				<th class="cell-70px">Quantity</th>
-				<th class="cell-70px">Price</th>
-				<th class="cell-70px">Subtotal</th>
-				<th></th>
-			</tr>
-		</thead>
-		<%= render @line_items %>
-		<tr id="total_line">
-			<td colspan="3"><span class="pull-right">Total:</span></td>
-			<td><%= number_to_euro(@cart.total_price) %></td>
-			<td></td>
-		</tr>
-	</table>
+	<%= render @cart %>
 	<%= link_to "Empty Cart", @cart, :method => :delete, :class => "btn" %>
 	<%= link_to "Checkout", new_order_path, :class => "btn btn-success" %>
 </div>

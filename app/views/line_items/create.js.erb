@@ -1,4 +1,4 @@
-$('#cart').html("<%=j render @cart %>");
+$('#cart').html("<%=j render :partial => 'carts/sidebar' %>");
 
 $('#amount_due').addClass('badge-success').
 	animate({'background-color':'#999999'}, 2000).

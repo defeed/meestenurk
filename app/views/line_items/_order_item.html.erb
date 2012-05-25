@@ -1,0 +1,6 @@
+<tr>
+	<td><%= "#{order_item.product.brand.name} #{order_item.product.title}"%></td>
+	<td><%= number_to_euro(order_item.product.price) %></td>
+	<td>&times; <%= order_item.quantity %></td>
+	<td><%= number_to_euro(order_item.total_price) %></td>
+</tr>

@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   before_filter :get_brands_and_categories
   before_filter :get_cart
+  before_filter :get_line_items
   # GET /orders
   # GET /orders.json
   def index

@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
     @cart = current_cart
   end
   
+  def get_line_items
+    @line_items = current_cart.line_items
+  end
+  
   private
   
     def current_user
