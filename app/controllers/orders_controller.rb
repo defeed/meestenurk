@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
+  before_filter :authorize, :only => [:index]
   before_filter :get_brands_and_categories
+  before_filter :get_payment_and_delivery_methods
   before_filter :get_cart
   before_filter :get_line_items
   # GET /orders

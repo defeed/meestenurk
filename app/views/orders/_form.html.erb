@@ -65,14 +65,14 @@
 		<div class="control-group">
     	<%= f.label :payment_method, "Payment Method", :class => "control-label" %>
     	<div class="controls">
-    		<%= f.select :payment_method, [["Swedbank", "swedbank"], ["SEB", "seb"], ["Sampo Pank", "sampo"]] %>
+    		<%= collection_select(:order, :payment_method_id, @payment_methods, :id, :name, { :prompt => true })  %>
     	</div>
 		</div>
 		
 		<div class="control-group">
-    	<%= f.label :shipping_method, "Delivery Method", :class => "control-label" %>
+    	<%= f.label :delivery_method, "Delivery Method", :class => "control-label" %>
     	<div class="controls">
-    		<%= f.select :shipping_method, [["SmartPost", "smartpost"], ["Free Delivery (Tallinn)", "free_tallinn"], ["Pick-up myself", "self_pickup"]] %>
+    		<%= collection_select(:order, :delivery_method_id, @delivery_methods, :id, :name, { :prompt => true })  %>
     	</div>
 		</div>
 		

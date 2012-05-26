@@ -8,8 +8,8 @@ class CreateOrders < ActiveRecord::Migration
       t.string :address
       t.string :city
       t.string :zip
-      t.string :payment_method
-      t.string :shipping_method
+      t.integer :payment_method_id
+      t.integer :delivery_method_id
       t.text :comment
       t.string :status
       t.integer :cart_id

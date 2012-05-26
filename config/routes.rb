@@ -1,7 +1,5 @@
 Meestenurk::Application.routes.draw do
 
-  resources :orders
-
   resources :line_items do
     member do
       post 'decrement'
@@ -9,12 +7,15 @@ Meestenurk::Application.routes.draw do
     end
   end
 
-  resources :carts
-
   resources :products
   resources :categories
   resources :brands
   resources :users
+
+  resources :carts
+  resources :orders
+  resources :payment_methods
+  resources :delivery_methods
 
   resources :sessions, :only => [:new, :create, :destroy]
   

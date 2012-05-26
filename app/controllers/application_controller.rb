@@ -14,6 +14,11 @@ class ApplicationController < ActionController::Base
     @line_items = current_cart.line_items
   end
   
+  def get_payment_and_delivery_methods
+    @payment_methods = PaymentMethod.all
+    @delivery_methods = DeliveryMethod.all
+  end
+  
   private
   
     def current_user
