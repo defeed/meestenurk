@@ -12,7 +12,6 @@ class CreateOrders < ActiveRecord::Migration
       t.integer :delivery_method_id
       t.text :comment
       t.string :status
-      t.integer :cart_id
 
       t.timestamps
     end

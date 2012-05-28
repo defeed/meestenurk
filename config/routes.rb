@@ -7,6 +7,8 @@ Meestenurk::Application.routes.draw do
     end
   end
 
+  resources :order_items, :only => :create
+
   resources :products
   resources :categories
   resources :brands
