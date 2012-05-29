@@ -33,23 +33,13 @@
 	</p>
 
 	<p>
-	  <b>Email:</b>
+	  <b>E-mail:</b>
 	  <%= @order.email %>
 	</p>
 
 	<p>
 	  <b>Address:</b>
-	  <%= @order.address %>
-	</p>
-
-	<p>
-	  <b>City:</b>
-	  <%= @order.city %>
-	</p>
-
-	<p>
-	  <b>Zip:</b>
-	  <%= @order.zip %>
+	  <%= @order.full_address %>
 	</p>
 
 	<p>
@@ -65,11 +55,6 @@
 	<p>
 	  <b>Comment:</b>
 	  <%= @order.comment %>
-	</p>
-
-	<p>
-	  <b>Status:</b>
-	  <%= @order.status %>
 	</p>
 	
 </div>

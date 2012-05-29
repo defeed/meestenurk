@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   before_filter :get_cart
   
   def new
-    @title = "Store Management"
+    @title = "Log In"
     
     if current_user
       redirect_to store_url, notice: "You are already logged in."

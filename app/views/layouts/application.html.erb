@@ -32,8 +32,11 @@
 							<li><a href="#payment">Payment</a></li>
               <li><a href="#shipping">Shipment</a></li>
 							<li><a href="#support">Support</a></li>
+							<% if current_user %>
+								<%= render 'layouts/management_menu' %>
+							<% end %>
             </ul>
-						<%= render 'layouts/login' %>
+						<%= render 'layouts/search_form' %>
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -49,7 +52,9 @@
       <hr>
 
       <footer>
-        <p>&copy; 2012 Meestenurk O&Uuml;</p>
+        <p>
+					&copy; 2012 Meestenurk O&Uuml; <span class="pull-right"><%= link_to(content_tag(:i, "", :class => "icon-lock"), login_path, :title => "Log In") unless current_user %></span>
+				</p>
       </footer>
 
     </div><!--/.fluid-container-->

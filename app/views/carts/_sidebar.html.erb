@@ -1,8 +1,9 @@
 <ul class="nav nav-list">
-	<li class="nav-header">Your Cart (<%= pluralize(@cart.total_items, "Item") %>)</li>
+	<li class="nav-header">
+		<i class="icon-shopping-cart"></i>Your Cart (<%= pluralize(@cart.total_items, "Item") %>)
+	</li>
 	<li>Total Due: <span class="badge" id="amount_due"><%= number_to_euro(@cart.total_price) %></span></li>
 	<% unless @cart.line_items.empty? %>
 	<li><%= link_to "View Cart & Checkout", cart_path(@cart) %></li>
-	<li><%= link_to "Empty Cart", @cart, :method => :delete %></li>
 	<% end %>
 </ul>
