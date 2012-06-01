@@ -62,7 +62,7 @@ class OrdersController < ApplicationController
         @cart.destroy
         session[:cart_id] = nil
         
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
+        format.html { redirect_to pay_order_url(@order), notice: "Your order was accepted. Now click the button below to pay with #{@order.payment_method.name}." }
         format.json { render json: @order, status: :created, location: @order }
       else
         format.html { render action: "new" }
@@ -97,5 +97,9 @@ class OrdersController < ApplicationController
       format.html { redirect_to orders_url }
       format.json { head :no_content }
     end
+  end
+  
+  def pay
+    @order = Order.find(params[:id])
   end
 end

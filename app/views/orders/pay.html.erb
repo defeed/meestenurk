@@ -1,0 +1,20 @@
+<div class="span9">
+	<h1>Order #<%= @order.id %></h1>
+	<hr>
+	<%= render @order %>
+	
+	<%= form_tag("https://pangalink.net/banklink/008/ipizza") do %>
+		<%= hidden_field_tag("VK_SERVICE", "1001") %>
+		<%= hidden_field_tag("VK_VERSION", "008") %>
+		<%= hidden_field_tag("VK_SND_ID", "123456") %>
+		<%= hidden_field_tag("VK_STAMP", "#{@order.id}") %>
+		<%= hidden_field_tag("VK_AMOUNT", "#{@order.total_price}") %>
+		<%= hidden_field_tag("VK_CURR", "EUR") %>
+		<%= hidden_field_tag("VK_ACC", "1234567890") %>
+		<%= hidden_field_tag("VK_NAME", "Meestenurk OÜ") %>
+		<%= hidden_field_tag("VK_REF", "") %>
+		<%= hidden_field_tag("VK_MSG", "Meestenurk Order #{@order.id}") %>
+		<%= hidden_field_tag("VK_RETURN", "#{order_url(@order)}/notify") %>
+		<%= submit_tag "Pay for Order", :class => "btn-success btn-large" %>
+	<% end %>
+</div>

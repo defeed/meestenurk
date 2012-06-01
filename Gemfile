@@ -4,6 +4,8 @@ gem 'rails', '3.2.3'
 gem 'heroku'
 gem 'paperclip'
 gem 'bootstrap-will_paginate'
+gem 'activemerchant'
+gem 'activemerchant_banklink'
 
 group :development, :test do
   gem 'sqlite3'

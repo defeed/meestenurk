@@ -1,4 +1,4 @@
-class Order < ActiveRecord::Base
+class Order < ActiveRecord::Base  
   attr_accessible :address, :city, :comment, :email, :first_name, :last_name, :payment_method_id, :phone, :delivery_method_id, :status, :zip
   
   has_many :order_items

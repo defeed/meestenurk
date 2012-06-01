@@ -15,7 +15,9 @@ Meestenurk::Application.routes.draw do
   resources :users
 
   resources :carts
-  resources :orders
+  resources :orders do
+    get 'pay', :on => :member
+  end
   resources :payment_methods
   resources :delivery_methods
 

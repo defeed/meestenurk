@@ -1,27 +1,5 @@
 <div class="span9">
-	<table class="table">
-		<thead>
-			<tr>
-				<th>Product</th>
-				<th class="cell-80px">Price</th>
-				<th class="cell-80px">Quantity</th>
-				<th class="cell-80px">Subtotal</th>
-			</tr>
-		</thead>
-		<% @order.order_items.each do |order_item| %>
-		<tr>
-			<td><%= "#{order_item.product.brand.name} #{order_item.product.title}"%></td>
-			<td><%= number_to_euro(order_item.product.price) %></td>
-			<td>&times; <%= order_item.quantity %></td>
-			<td><%= number_to_euro(order_item.total_price) %></td>
-		</tr>
-		<% end %>
-		<tr id="total_line">
-			<td colspan="3"><span class="pull-right">Total:</span></td>
-			<td><%= number_to_euro(@order.total_price) %></td>
-		</tr>
-	</table>
-
+	<%= render @order %>
 	<p>
 	  <b>Name:</b>
 	  <%= @order.full_name %>
