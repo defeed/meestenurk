@@ -23,6 +23,8 @@ class Product < ActiveRecord::Base
                       :large  => "500x500" },
                     :default_url => "/assets/missing_:style.png"
   
+  translates :title, :description
+  
   private
   
   def ensure_not_referenced_by_any_line_item

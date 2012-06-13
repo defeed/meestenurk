@@ -34,6 +34,7 @@ ru:
   start_checkout: "Оформить заказ"
   start_payment: "Оплатить заказ"
   new_order: "Оформление заказа"
+  form_save: "Сохранить"
   activerecord:
     attributes:
       product:
@@ -42,6 +43,12 @@ ru:
         title: "Наименование"
         description: "Описание"
         price: "Цена"
+      category:
+        name: "Название"
+        description: "Описание"
+      brand:
+        name: "Название"
+        description: "Описание"
       line_item:
         quantity: "Кол-во"
         total_price: "Сумма"

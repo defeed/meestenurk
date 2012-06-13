@@ -4,6 +4,7 @@ gem 'rails', '3.2.3'
 gem 'heroku'
 gem 'paperclip'
 gem 'bootstrap-will_paginate'
+gem 'globalize3'
 gem 'activemerchant'
 gem 'activemerchant_banklink'
 

@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120528065459) do
+ActiveRecord::Schema.define(:version => 20120613154245) do
+
+  create_table "brand_translations", :force => true do |t|
+    t.integer  "brand_id"
+    t.string   "locale"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "brand_translations", ["brand_id"], :name => "index_brand_translations_on_brand_id"
+  add_index "brand_translations", ["locale"], :name => "index_brand_translations_on_locale"
 
   create_table "brands", :force => true do |t|
     t.string   "name"
@@ -31,6 +42,18 @@ ActiveRecord::Schema.define(:version => 20120528065459) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "category_translations", :force => true do |t|
+    t.integer  "category_id"
+    t.string   "locale"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "category_translations", ["category_id"], :name => "index_category_translations_on_category_id"
+  add_index "category_translations", ["locale"], :name => "index_category_translations_on_locale"
 
   create_table "delivery_methods", :force => true do |t|
     t.string   "name"
@@ -75,6 +98,18 @@ ActiveRecord::Schema.define(:version => 20120528065459) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "product_translations", :force => true do |t|
+    t.integer  "product_id"
+    t.string   "locale"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "product_translations", ["locale"], :name => "index_product_translations_on_locale"
+  add_index "product_translations", ["product_id"], :name => "index_product_translations_on_product_id"
 
   create_table "products", :force => true do |t|
     t.string   "title"
