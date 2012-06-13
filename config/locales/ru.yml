@@ -17,9 +17,10 @@ ru:
   in_your_cart: "В вашей корзине"
   total_items:
     zero: "Пусто"
-    one: "%{count} товар"
-    few: "%{count} товара"
-    other: "%{count} товаров"
+    one: "%{count} предмет"
+    few: "%{count} предмета"
+    many: "%{count} предметов"
+    other: "%{count} предмета"
   total_due: "К оплате"
   view_cart_and_checkout: "Корзина и оплата"
   view_cart: "Корзина"

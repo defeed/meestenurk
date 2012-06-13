@@ -1,21 +1,20 @@
 {:ru => 
   { :i18n => 
     { :plural => 
-      { :keys => [:one, :few, :other],
-        :rule => lambda { |n| 
-          if n % 10 == 1 && 
-             n % 100 != 11
+      { :keys => [:one, :few, :many, :other],
+        :rule => lambda do |n|
+          mod10 = n % 10
+          mod100 = n % 100
+          if mod10 == 1 &&  mod100 != 11
             :one
+          elsif [2, 3, 4].include?(mod10) && ![12, 13, 14].include?(mod100)
+            :few
+          elsif mod10 == 0 || (5..9).to_a.include?(mod10) || (11..14).to_a.include?(mod100)
+            :many
           else
-            if [2, 3, 4].include?(n % 10) && 
-               ![12, 13, 14].include?(n % 100)
-
-              :few 
-            else
-              :other 
-            end
+            :other
           end
-        } 
+        end
       } 
     } 
   } 
