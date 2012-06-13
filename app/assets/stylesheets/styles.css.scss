@@ -56,9 +56,29 @@ form .controls .thumbnail {
 	margin: 3px;
 }
 
+.cell-100px { width: 100px; }
 .cell-80px { width: 80px; }
 
 li>i { margin-left: -16px; }
+
+
+.sidebar-buttons {
+	margin: 10px 0 0 15px;
+	.btn {
+		margin-top: 5px;
+	}
+}
+
+#cart {
+	padding: 20px;
+}
+
+.table-cart td {
+	vertical-align: middle !important;
+	img {
+		display: inline;
+	}
+}
 
 @import "bootstrap";
 @import "bootstrap-responsive";

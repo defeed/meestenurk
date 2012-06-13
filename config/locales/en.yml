@@ -2,7 +2,48 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  payment: "Payment"
+  delivery: "Delivery"
+  support: "Support"
+  management: "Management"
+  orders: "Orders"
+  products: "Products"
+  categories: "Categories"
+  brands: "Brands"
+  users: "Users"
+  payment_methods: "Payment Methods"
+  delivery_methods: "Delivery Methods"
+  logout: "Log Out"
+  search: "Search"
+  your_cart: "Your Cart"
+  in_your_cart: "Your Cart:"
+  total_items:
+    zero: "Empty"
+    one: "1 Item"
+    other: "%{count} Items"
+  total_due: "Total Due"
+  view_cart_and_checkout: "View Cart and Checkout"
+  view_cart: "View Cart"
+  start_checkout_sidebar: "Checkout"
+  browse_by_category: "Browse by Category"
+  browse_by_brand: "Browse by Brand"
+  total_due: "Total Due"
+  buy_now: "Buy Now"
+  add_to_cart: "Add to Cart"
+  new_order: "New Order"
+  about_company: "About"
+  edit_product: "Edit Product"
+  clear_cart: "Clear"
+  start_checkout: "Checkout"
+  start_payment: "Start Payment"
   activerecord:
     attributes:
       user:
         password_digest: "Password"
+      line_item:
+        total_price: "Subtotal"
+      cart:
+        total_price: "Total"
+      order:
+        email: "E-mail address"
+        zip: "Postcode"

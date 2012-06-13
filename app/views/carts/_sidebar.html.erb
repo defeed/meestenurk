@@ -1,9 +1,11 @@
 <ul class="nav nav-list">
 	<li class="nav-header">
-		<i class="icon-shopping-cart"></i>Your Cart (<%= pluralize(@cart.total_items, "Item") %>)
-	</li>
-	<li>Total Due: <span class="badge" id="amount_due"><%= number_to_euro(@cart.total_price) %></span></li>
-	<% unless @cart.line_items.empty? %>
-	<li><%= link_to "View Cart & Checkout", cart_path(@cart) %></li>
-	<% end %>
+		<i class="icon-shopping-cart"></i><%= t :your_cart %> (<%= t(:total_items, :count => @cart.total_items) %>)
+	<li><%= t :total_due %>: <span class="badge" id="amount_due"><%= number_to_euro(@cart.total_price) %></span></li>
 </ul>
+<% unless @cart.line_items.empty? %>
+<p class="sidebar-buttons">
+	<%= link_to "#{t :view_cart}", cart_path(@cart), :class => "btn" %>
+	<%= link_to "#{t :start_checkout_sidebar}", new_order_path, :class => "btn btn-success" %>
+</p>
+<% end %>

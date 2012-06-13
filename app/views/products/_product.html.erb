@@ -5,8 +5,8 @@
     <div class="buy">
     	<p><span class="price"><%= number_to_euro(product.price) %></span></p>
 			<p>
-				<%= button_to "Buy Now", line_items_path(:product_id => product), :class => "btn btn-success" %>
-				<%= button_to "Add to Cart", line_items_path(:product_id => product), :class => "btn", :remote => true %>
+				<%= button_to "#{t :buy_now}", line_items_path(:product_id => product), :class => "btn btn-success" %>
+				<%= button_to "#{t :add_to_cart}", line_items_path(:product_id => product), :class => "btn", :remote => true %>
 			</p>
     </div>
   </div>

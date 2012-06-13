@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%= I18n.locale %>">
   <head>
     <meta charset="utf-8">
     <title><%= title %></title>
@@ -28,16 +28,9 @@
           </a>
           <%= link_to "Meestenurk", store_url, :class => "brand" %>
           <div class="nav-collapse">
-            <ul class="nav">
-							<li><a href="#payment">Payment</a></li>
-              <li><a href="#shipping">Shipment</a></li>
-							<li><a href="#support">Support</a></li>
-							<% if current_user %>
-								<%= render 'layouts/management_menu' %>
-							<% end %>
-            </ul>
-						<%= render 'layouts/search_form' %>
-          </div><!--/.nav-collapse -->
+            <%= render 'layouts/site_menu' %>
+						<%= render 'layouts/language_select' %>
+          </div>
         </div>
       </div>
     </div>
@@ -47,7 +40,7 @@
         <%= render 'layouts/sidebar' %>
 				<%= render 'layouts/messages' %>
 				<%= yield %>
-      </div><!--/row-->
+      </div>
 
       <hr>
 
@@ -57,7 +50,7 @@
 				</p>
       </footer>
 
-    </div><!--/.fluid-container-->
+    </div>
 
   </body>
 </html>

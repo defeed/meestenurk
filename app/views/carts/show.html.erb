@@ -1,11 +1,11 @@
 <div class="span9">
-	<h1><%= pluralize(@cart.total_items, "Item") %> in Your Cart</h1>
+	<h1><%= t :in_your_cart %> <%= t(:total_items, :count => @cart.total_items) %></h1>
 	<hr>
 	<%= render @cart %>
 	<%= link_to @cart, :method => :delete, :class => "btn" do %>
-		<%= content_tag(:i, "", :class => "icon-trash") %> Cancel
+		<%= content_tag(:i, "", :class => "icon-trash") %> <%= t :clear_cart %>
 	<% end %>
 	<%= link_to new_order_path, :class => "btn btn-success" do %>
-		<%= content_tag(:i, "", :class => "icon-shopping-cart icon-white") %> Checkout
+		<%= content_tag(:i, "", :class => "icon-shopping-cart icon-white") %> <%= t :start_checkout %>
 	<% end %>
 </div>

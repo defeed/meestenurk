@@ -1,0 +1,8 @@
+<ul class="nav">
+	<li><a href="#payment"><%= t :payment %></a></li>
+  <li><a href="#shipping"><%= t :delivery %></a></li>
+	<li><a href="#support"><%= t :support %></a></li>
+	<% if current_user %>
+		<%= render 'layouts/management_menu' %>
+	<% end %>
+</ul>

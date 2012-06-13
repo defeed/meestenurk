@@ -1,15 +1,15 @@
 <table class="table">
 	<thead>
 		<tr>
-			<th>Product</th>
-			<th class="cell-80px">Price</th>
-			<th class="cell-80px">Quantity</th>
-			<th class="cell-80px">Subtotal</th>
+			<th><%= Product.human_attribute_name(:title) %></th>
+			<th class="cell-80px"><%= Product.human_attribute_name(:price) %></th>
+			<th class="cell-80px"><%= LineItem.human_attribute_name(:quantity) %></th>
+			<th class="cell-100px"><%= LineItem.human_attribute_name(:total_price) %></th>
 		</tr>
 	</thead>
 	<%= render :partial => 'line_items/order_item', :collection => @line_items %>
-	<tr id="total_line">
-		<td colspan="3"><span class="pull-right">Total:</span></td>
+	<tr class="lead">
+		<td colspan="3"><span class="pull-right"><%= Cart.human_attribute_name(:total_price) %>:</span></td>
 		<td><%= number_to_euro(@cart.total_price) %></td>
 	</tr>
 </table>

@@ -9,24 +9,29 @@ Meestenurk::Application.routes.draw do
 
   resources :order_items, :only => :create
 
-  resources :products
-  resources :categories
-  resources :brands
-  resources :users
+  scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
+    resources :products
+    resources :categories
+    resources :brands
+    resources :users
 
-  resources :carts
-  resources :orders do
-    get 'pay', :on => :member
+    resources :carts
+    resources :orders do
+      get 'pay', :on => :member
+    end
+    resources :payment_methods
+    resources :delivery_methods
+
+    resources :sessions, :only => [:new, :create, :destroy]
+
+    root :to => 'store#index', :as => 'store'
+
+    match '/login'  => 'sessions#new'
+    match '/logout' => 'sessions#destroy'
   end
-  resources :payment_methods
-  resources :delivery_methods
-
-  resources :sessions, :only => [:new, :create, :destroy]
   
-  root :to => 'store#index', :as => 'store'
-
-  match '/login'  => 'sessions#new'
-  match '/logout' => 'sessions#destroy'
+  match '*path', :to => redirect("/#{I18n.default_locale}/%{path}")
+  match '', :to => redirect("/#{I18n.default_locale}")
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
