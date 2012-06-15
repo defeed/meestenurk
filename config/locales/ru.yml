@@ -1,69 +1,419 @@
 ru:
-  search: "Поиск"
-  payment: "Оплата"
-  delivery: "Доставка"
-  support: "Помощь"
-  management: "Управление"
-  orders: "Заказы"
-  products: "Товары"
-  categories: "Категории"
-  brands: "Бренды"
-  users: "Пользователи"
-  payment_methods: "Способы оплаты"
-  delivery_methods: "Способы доставки"
-  logout: "Выход"
-  search: "Поиск"
-  your_cart: "Ваша корзина"
-  in_your_cart: "В вашей корзине"
-  total_items:
-    zero: "Пусто"
-    one: "%{count} предмет"
-    few: "%{count} предмета"
-    many: "%{count} предметов"
-    other: "%{count} предмета"
-  total_due: "К оплате"
-  view_cart_and_checkout: "Корзина и оплата"
-  view_cart: "Корзина"
-  start_checkout_sidebar: "Оформить"
-  browse_by_category: "По категориям"
-  browse_by_brand: "По брендам"
-  buy_now: "Купить"
-  add_to_cart: "В корзину"
-  about_company: "О компании"
-  edit_product: "Редактировать товар"
-  clear_cart: "Очистить"
-  start_checkout: "Оформить заказ"
-  start_payment: "Оплатить заказ"
-  new_order: "Оформление заказа"
-  form_save: "Сохранить"
+  date:
+    abbr_day_names:
+    - Вс
+    - Пн
+    - Вт
+    - Ср
+    - Чт
+    - Пт
+    - Сб
+    abbr_month_names:
+    - 
+    - янв.
+    - февр.
+    - марта
+    - апр.
+    - мая
+    - июня
+    - июля
+    - авг.
+    - сент.
+    - окт.
+    - нояб.
+    - дек.
+    day_names:
+    - воскресенье
+    - понедельник
+    - вторник
+    - среда
+    - четверг
+    - пятница
+    - суббота
+    formats:
+      default: ! '%d.%m.%Y'
+      long: ! '%d %B %Y'
+      short: ! '%d %b'
+    month_names:
+    - 
+    - января
+    - февраля
+    - марта
+    - апреля
+    - мая
+    - июня
+    - июля
+    - августа
+    - сентября
+    - октября
+    - ноября
+    - декабря
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        few: около %{count} часов
+        many: около %{count} часов
+        one: около %{count} часа
+        other: около %{count} часа
+      about_x_months:
+        few: около %{count} месяцев
+        many: около %{count} месяцев
+        one: около %{count} месяца
+        other: около %{count} месяца
+      about_x_years:
+        few: около %{count} лет
+        many: около %{count} лет
+        one: около %{count} года
+        other: около %{count} лет
+      almost_x_years:
+        one: почти 1 год
+        few: почти %{count} года
+        many: почти %{count} лет
+        other: почти %{count} лет
+      half_a_minute: меньше минуты
+      less_than_x_minutes:
+        few: меньше %{count} минут
+        many: меньше %{count} минут
+        one: меньше %{count} минуты
+        other: меньше %{count} минуты
+      less_than_x_seconds:
+        few: меньше %{count} секунд
+        many: меньше %{count} секунд
+        one: меньше %{count} секунды
+        other: меньше %{count} секунды
+      over_x_years:
+        few: больше %{count} лет
+        many: больше %{count} лет
+        one: больше %{count} года
+        other: больше %{count} лет
+      x_days:
+        few: ! '%{count} дня'
+        many: ! '%{count} дней'
+        one: ! '%{count} день'
+        other: ! '%{count} дня'
+      x_minutes:
+        few: ! '%{count} минуты'
+        many: ! '%{count} минут'
+        one: ! '%{count} минуту'
+        other: ! '%{count} минуты'
+      x_months:
+        few: ! '%{count} месяца'
+        many: ! '%{count} месяцев'
+        one: ! '%{count} месяц'
+        other: ! '%{count} месяца'
+      x_seconds:
+        few: ! '%{count} секунды'
+        many: ! '%{count} секунд'
+        one: ! '%{count} секунда'
+        other: ! '%{count} секунды'
+    prompts:
+      day: День
+      hour: Часов
+      minute: Минут
+      month: Месяц
+      second: Секунд
+      year: Год
+  errors: &errors
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: нужно подтвердить
+      blank: не может быть пустым
+      confirmation: не совпадает с подтверждением
+      empty: не может быть пустым
+      equal_to: может иметь лишь значение, равное %{count}
+      even: может иметь лишь нечетное значение
+      exclusion: имеет зарезервированное значение
+      greater_than: может иметь значение большее %{count}
+      greater_than_or_equal_to: может иметь значение большее или равное %{count}
+      inclusion: имеет непредусмотренное значение
+      invalid: имеет неверное значение
+      less_than: может иметь значение меньшее чем %{count}
+      less_than_or_equal_to: может иметь значение меньшее или равное %{count}
+      not_a_number: не является числом
+      not_an_integer: не является целым числом
+      odd: может иметь лишь четное значение
+      record_invalid: ! 'Возникли ошибки: %{errors}'
+      taken: уже существует
+      too_long:
+        few: слишком большой длины (не может быть больше чем %{count} символа)
+        many: слишком большой длины (не может быть больше чем %{count} символов)
+        one: слишком большой длины (не может быть больше чем %{count} символ)
+        other: слишком большой длины (не может быть больше чем %{count} символа)
+      too_short:
+        few: недостаточной длины (не может быть меньше %{count} символов)
+        many: недостаточной длины (не может быть меньше %{count} символов)
+        one: недостаточной длины (не может быть меньше %{count} символа)
+        other: недостаточной длины (не может быть меньше %{count} символа)
+      wrong_length:
+        few: неверной длины (может быть длиной ровно %{count} символа)
+        many: неверной длины (может быть длиной ровно %{count} символов)
+        one: неверной длины (может быть длиной ровно %{count} символ)
+        other: неверной длины (может быть длиной ровно %{count} символа)
+    template:
+      body: ! 'Проблемы возникли со следующими полями:'
+      header:
+        one: ! 'При сохранении возникла %{count} ошибка'
+        few: ! 'При сохранении возникло %{count} ошибки'
+        many: ! 'При сохранении возникло %{count} ошибок'
+        other: ! 'При сохранении возникло %{count} ошибок'
+  helpers:
+    select:
+      prompt: ! 'Выберите из списка: '
+    submit:
+      create: Создать %{model}
+      submit: Сохранить %{model}
+      update: Сохранить %{model}
+  number:
+    currency:
+      format:
+        delimiter: ! ''
+        format: ! '%n %u'
+        precision: 2
+        separator: ','
+        significant: false
+        strip_insignificant_zeros: false
+        unit: €
+    format:
+      delimiter: ! ''
+      precision: 3
+      separator: ','
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion:
+            few: миллиардов
+            many: миллиардов
+            one: миллиард
+            other: миллиардов
+          million:
+            few: миллионов
+            many: миллионов
+            one: миллион
+            other: миллионов
+          quadrillion:
+            few: квадриллионов
+            many: квадриллионов
+            one: квадриллион
+            other: квадриллионов
+          thousand:
+            few: тысяч
+            many: тысяч
+            one: тысяча
+            other: тысяч
+          trillion:
+            few: триллионов
+            many: триллионов
+            one: триллион
+            other: триллионов
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 1
+        significant: false
+        strip_insignificant_zeros: false
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            few: байта
+            many: байт
+            one: байт
+            other: байта
+          gb: ГБ
+          kb: КБ
+          mb: МБ
+          tb: ТБ
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ' и '
+      two_words_connector: ! ' и '
+      words_connector: ! ', '
+  time:
+    am: утра
+    pm: вечера
+    formats:
+      default: ! '%d.%m.%Y, %H:%M'
+      full: ! '%a, %d %b %Y, %H:%M:%S %z'
+      long: ! '%d %B %Y, %H:%M'
+      short: ! '%d %b, %H:%M'
+  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+  activemodel:
+    errors:
+      <<: *errors
   activerecord:
-    attributes:
-      product:
-        category: "Категория"
-        brand: "Бренд"
-        title: "Наименование"
-        description: "Описание"
-        price: "Цена"
-      category:
-        name: "Название"
-        description: "Описание"
-      brand:
-        name: "Название"
-        description: "Описание"
-      line_item:
-        quantity: "Кол-во"
-        total_price: "Сумма"
-      cart:
-        total_price: "Всего к оплате"
-      order:
-        first_name: "Имя"
-        last_name: "Фамилия"
-        phone: "Номер телефона"
-        email: "Адрес электронной почты"
-        address: "Адрес (улица, дом, квартира)"
-        city: "Город (посёлок, деревня)"
-        zip: "Почтовый индекс"
-        payment_method: "Способ оплаты"
-        delivery_method: "Способ доставки"
-        comment: "Комментарий"
+    errors:
+      <<: *errors
+      
+  layouts:
+    application:
+      login: Войти
+    site_menu:
+      payment: Оплата
+      delivery: Доставка
+      support: Помощь
+    management_menu:
+      management: Управление
+      orders: Заказы
+      products: Товары
+      categories: Категории
+      brands: Бренды
+      users: Пользователи
+      payment_methods: Способы оплаты
+      delivery_methods: Способы доставки
+      logout: Выход
+    sidebar:
+      categories: Категории
+      brands: Бренды
+  
+  carts:
+    sidebar:
+      your_cart: Ваша корзина
+      total_items:
+        zero: Пусто
+        one: '%{count} товар'
+        few: '%{count} товара'
+        many: '%{count} товаров'
+        other: '%{count} товара'
+      total_due: К оплате
+      view_cart: Корзина
+      start_checkout: Оформить
+    show:
+      clear_cart: "Очистить"
+      start_checkout: "Оформить заказ"
+    items_in_your_cart:
+      one: 'В вашей корзине %{count} товар'
+      few: 'В вашей корзине %{count} товара'
+      many: 'В вашей корзине %{count} товаров'
+      other: 'В вашей корзине %{count} товара'
+  
+  line_items:
+    remove_from_cart: Удалить из корзины    
+      
+  products:
+    buy_now: Купить
+    add_to_cart: В корзину
+    about_company: О компании
         
+  buttons:
+    edit: Редактировать
+    save: Сохранить
+    show: Показать
+    destroy: Удалить
+    new: Создать 
+    back_to_list: Вернуться к списку
+    continue: Продолжить
+    start_payment: Оплатить заказ
+    login: Войти
+    
+  headers:
+    products: Товары
+    new_product: Добавление товара
+    edit_product: Свойства товара
+    
+    categories: Категории товаров
+    new_category: Добавление категории
+    edit_category: Свойства категории
+    
+    brands: Бренды
+    new_brand: Добавление бренда
+    edit_brand: Свойства бренда
+      
+    orders: Заказы
+    new_order: Оформление заказа
+    order: 'Заказ #%{id}'
+      
+    users: Пользователи
+    new_user: Новый пользователь
+    edit_user: 'Пользователь %{name}'
+    
+    payment_methods: Способы оплаты
+    new_payment_method: Добавление способа оплаты
+    edit_payment_method: Свойства способа оплаты
+    
+    delivery_methods: Способы доставки
+    new_delivery_method: Добавление способа доставки
+    edit_delivery_method: Свойства способа доставки
+    
+    cart: Корзина
+    
+    login: Войти
+    
+  labels:
+    customer: Заказчик
+    full_name: Имя
+    address: Адрес
+    payment_method: Оплата
+    delivery_method: Доставка
+    status: Статус
+    date: Дата
+    amount: Сумма
+    username: Имя пользователя
+    password: Пароль
+    
+  activerecord:
+    attributes:      
+      product:
+        category: Категория
+        brand: Бренд
+        title: Наименование
+        description: Описание
+        price: Цена
+        
+      category:
+        name: Название
+        description: Описание
+        
+      brand:
+        name: Название
+        description: Описание
+        
+      order:
+        id: '# заказа'
+        first_name: Имя
+        last_name: Фамилия
+        phone: Контактный телефон
+        email: Электронная почта
+        address: Адрес (улица, дом, квартира)
+        city: Город или деревня
+        zip: Почтовый индекс
+        comment: Комментарий или пожелание
+        created_at: Дата
+        payment_method: Способ оплаты
+        delivery_method: Способ доставки
+        status: Статус
+        total_price: Итого
+        
+      line_item:
+        quantity: Кол-во
+        total_price: Сумма
+        
+      order_item:
+        quantity: Кол-во
+        total_price: Сумма
+        
+      cart:
+        total_price: Всего к оплате
+        
+      payment_method:
+        name: Название
+        
+      delivery_method:
+        name: Название
+        
+      user:
+        name: Имя пользователя
+        password: Пароль
+        password_confirmation: Подтверждение пароля

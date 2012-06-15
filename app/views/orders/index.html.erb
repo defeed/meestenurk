@@ -1,16 +1,16 @@
 <div class="span9">
-	<h1>Orders</h1>
+	<h1><%= t 'headers.orders' %></h1>
 	<hr>
 	<table class="table table-striped table-bordered" id="datatable-orders">
 	  <thead>
 	  	<tr>
 				<th>#</th>
-		    <th>Customer</th>
-		    <th>Payment</th>
-		    <th>Delivery</th>
-		    <th>Status</th>
-				<th>Date</th>
-				<th>Amount</th>
+		    <th><%= t 'labels.customer' %></th>
+		    <th><%= t 'labels.payment_method' %></th>
+		    <th><%= t 'labels.delivery_method' %></th>
+		    <th><%= t 'labels.status' %></th>
+				<th><%= t 'labels.date' %></th>
+				<th><%= t 'labels.amount' %></th>
 		  </tr>
 	  </thead>
 		<tbody>
@@ -26,8 +26,8 @@
 	    <td><%= order.payment_method.name %></td>
 	    <td><%= order.delivery_method.name %></td>
 	    <td><%= order.status %></td>
-			<td><%= order.created_at %></td>
-			<td><%= number_to_euro(order.total_price) %></td>
+			<td><%= l order.created_at %></td>
+			<td><%= number_to_currency(order.total_price) %></td>
 	  </tr>
 	<% end %>
 		</tbody>

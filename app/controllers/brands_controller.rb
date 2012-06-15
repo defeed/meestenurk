@@ -5,7 +5,7 @@ class BrandsController < ApplicationController
   # GET /brands
   # GET /brands.json
   def index
-    @title = "Brands"
+    @title = t('headers.brands')
     
     respond_to do |format|
       format.html # index.html.erb
@@ -31,7 +31,7 @@ class BrandsController < ApplicationController
   # GET /brands/new.json
   def new
     @brand = Brand.new
-    @title = "New Brand"
+    @title = t('headers.new_brand')
 
     respond_to do |format|
       format.html # new.html.erb
@@ -49,6 +49,7 @@ class BrandsController < ApplicationController
   # POST /brands.json
   def create
     @brand = Brand.new(params[:brand])
+    @title = t('headers.new_brand')
 
     respond_to do |format|
       if @brand.save

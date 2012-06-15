@@ -1,38 +1,41 @@
 <div class="span9">
+	<h1><%= t 'headers.order', :id => @order.id %></h1>
+	<hr>
 	<%= render @order %>
-	<p>
-	  <b>Name:</b>
-	  <%= @order.full_name %>
-	</p>
-
-	<p>
-	  <b>Phone:</b>
-	  <%= @order.phone %>
-	</p>
-
-	<p>
-	  <b>E-mail:</b>
-	  <%= @order.email %>
-	</p>
-
-	<p>
-	  <b>Address:</b>
-	  <%= @order.full_address %>
-	</p>
-
-	<p>
-	  <b>Payment method:</b>
-	  <%= @order.payment_method.name %>
-	</p>
-
-	<p>
-	  <b>Shipping method:</b>
-	  <%= @order.delivery_method.name %>
-	</p>
-
-	<p>
-	  <b>Comment:</b>
-	  <%= @order.comment %>
-	</p>
 	
+	<table class="table table-bordered">
+		<tr>
+			<th><%= t 'labels.date' %></th>
+			<td><%= l(@order.created_at, :format => :long) %></td>
+		</tr>
+		<tr>
+			<th><%= t 'labels.full_name' %></th>
+			<td><%= @order.full_name %></td>
+		</tr>
+		<tr>
+			<th><%= Order.human_attribute_name(:phone) %></th>
+			<td><%= @order.phone %></td>
+		</tr>
+		<tr>
+			<th><%= Order.human_attribute_name(:email) %></th>
+			<td> <%= @order.email %></td>
+		</tr>
+		<tr>
+			<th><%= t 'labels.address' %></th>
+			<td><%= @order.full_address %></td>
+		</tr>
+		<tr>
+			<th><%= Order.human_attribute_name(:payment_method) %></th>
+			<td><%= @order.payment_method.name %></td>
+		</tr>
+		<tr>
+			<th><%= Order.human_attribute_name(:delivery_method) %></th>
+			<td><%= @order.delivery_method.name %></td>
+		</tr>
+		<tr>
+			<th><%= Order.human_attribute_name(:comment) %></th>
+			<td><%= @order.comment %></td>
+		</tr>
+	</table>
+
 </div>

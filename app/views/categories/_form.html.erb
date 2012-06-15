@@ -2,8 +2,7 @@
 <% if @category.errors.any? %>
   <div class="alert alert-error">
 		<a class="close" data-dismiss="alert" href="#">×</a>
-    <h4 class="alert-heading">Oh snap! We got <%= pluralize(@category.errors.count, "problem") %> here. Fix them and we're fine.</h4>
-
+    <h4 class="alert-heading"><%= t('errors.template.header', :count => @category.errors.count) %></h4>
     <ul>
     <% @category.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
@@ -29,7 +28,8 @@
 	
 	<div class="control-group">
   	<div class="controls">
-  		<%= f.submit "#{t :form_save}", :class => "btn btn-large" %>
+  		<%= f.submit t('buttons.save'), :class => "btn btn-large btn-success" %>
+			<%= link_to t('buttons.back_to_list'), categories_url, :class => "btn btn-large" %>
   	</div>
 	</div>
 </fieldset>

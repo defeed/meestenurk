@@ -16,10 +16,10 @@
 		<div class="span5">
 			<p><%= @product.description %></p>
 			<div class="buy">
-      	<p><span class="price"><%= Product.human_attribute_name(:price) %>: <%= number_to_euro(@product.price) %></span></p>
+      	<p class="lead"><%= Product.human_attribute_name(:price) %>: <%= number_to_currency(@product.price) %></p>
 				<p>
-					<%= button_to "#{t :buy_now}", line_items_path(:product_id => @product), :class => "btn btn-success" %>
-					<%= button_to "#{t :add_to_cart}", line_items_path(:product_id => @product), :class => "btn", :remote => true %>
+					<%= button_to "#{t 'products.buy_now'}", line_items_path(:product_id => @product), :class => "btn btn-success" %>
+					<%= button_to "#{t 'products.add_to_cart'}", line_items_path(:product_id => @product), :class => "btn", :remote => true %>
 				</p>
       </div>
 		</div>
@@ -27,9 +27,9 @@
 	<hr>
 	<div class="row">
 		<div class="span9">
-			<h2><%= t :about_company %> <%= @product.brand.name %></h2>
+			<h2><%= t 'products.about_company' %> <%= @product.brand.name %></h2>
 			<p><%= @product.brand.description %></p>
 		</div>
 	</div>
-	<p><%= link_to("#{t :edit_product}", edit_product_path, :class => "btn") if current_user %></p>
+	<p><%= link_to("#{t 'buttons.edit'}", edit_product_path, :class => "btn btn-large") if current_user %></p>
 </div><!--/span-->

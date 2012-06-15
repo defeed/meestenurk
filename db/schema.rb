@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120613154245) do
+ActiveRecord::Schema.define(:version => 20120615064236) do
 
   create_table "brand_translations", :force => true do |t|
     t.integer  "brand_id"
@@ -54,6 +54,17 @@ ActiveRecord::Schema.define(:version => 20120613154245) do
 
   add_index "category_translations", ["category_id"], :name => "index_category_translations_on_category_id"
   add_index "category_translations", ["locale"], :name => "index_category_translations_on_locale"
+
+  create_table "delivery_method_translations", :force => true do |t|
+    t.integer  "delivery_method_id"
+    t.string   "locale"
+    t.string   "name"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  add_index "delivery_method_translations", ["delivery_method_id"], :name => "index_ac25ba0f0ebb753f84c4a9bbad19d7e2483fa9d2"
+  add_index "delivery_method_translations", ["locale"], :name => "index_delivery_method_translations_on_locale"
 
   create_table "delivery_methods", :force => true do |t|
     t.string   "name"
@@ -102,7 +113,6 @@ ActiveRecord::Schema.define(:version => 20120613154245) do
   create_table "product_translations", :force => true do |t|
     t.integer  "product_id"
     t.string   "locale"
-    t.string   "title"
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false

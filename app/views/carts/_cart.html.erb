@@ -12,7 +12,7 @@
 	<%= render :partial => 'line_items/cart_item', :collection => @line_items %>
 	<tr class="lead">
 		<td colspan="4"><span class="pull-right"><%= Cart.human_attribute_name(:total_price) %>:</span></td>
-		<td><%= number_to_euro(@cart.total_price) %></td>
+		<td><%= number_to_currency(@cart.total_price) %></td>
 		<td></td>
 	</tr>
 </table>

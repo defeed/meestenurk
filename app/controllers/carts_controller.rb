@@ -16,7 +16,7 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
-    @title = "Your Cart"
+    @title = t('headers.cart')
     @line_items = current_cart.line_items.order("created_at DESC")
     begin
       @cart = Cart.find(params[:id])

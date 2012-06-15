@@ -1,0 +1,358 @@
+et:
+  date:
+    abbr_day_names:
+    - P
+    - E
+    - T
+    - K
+    - N
+    - R
+    - L
+    abbr_month_names:
+    - 
+    - jaan.
+    - veebr.
+    - märts
+    - apr.
+    - mai
+    - juuni
+    - juuli
+    - aug.
+    - sept.
+    - okt.
+    - nov.
+    - dets.
+    day_names:
+    - pühapäev
+    - esmaspäev
+    - teisipäev
+    - kolmapäev
+    - neljapäev
+    - reede
+    - laupäev
+    formats:
+      default: ! '%d.%m.%Y'
+      long: ! '%d. %B %Y'
+      short: ! '%d.%m.%y'
+    month_names:
+    - 
+    - jaanuar
+    - veebruar
+    - märts
+    - aprill
+    - mai
+    - juuni
+    - juuli
+    - august
+    - september
+    - oktoober
+    - november
+    - detsember
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: umbes %{count} tund
+        other: umbes %{count} tundi
+      about_x_months:
+        one: umbes %{count} kuu
+        other: umbes %{count} kuud
+      about_x_years:
+        one: umbes %{count} aasta
+        other: umbes %{count} aastat
+      almost_x_years:
+        one: peaaegu üks aasta
+        other: peaaegu %{count} aastat
+      half_a_minute: pool minutit
+      less_than_x_minutes:
+        one: vähem kui %{count} minut
+        other: vähem kui %{count} minutit
+      less_than_x_seconds:
+        one: vähem kui %{count} sekund
+        other: vähem kui %{count} sekundit
+      over_x_years:
+        one: üle %{count} aasta
+        other: üle %{count} aastat
+      x_days:
+        one: ! '%{count} päev'
+        other: ! '%{count} päeva'
+      x_minutes:
+        one: ! '%{count} minut'
+        other: ! '%{count} minutit'
+      x_months:
+        one: ! '%{count} kuu'
+        other: ! '%{count} kuud'
+      x_seconds:
+        one: ! '%{count} sekund'
+        other: ! '%{count} sekundit'
+    prompts:
+      day: Päev
+      hour: Tunde
+      minute: Minutit
+      month: Kuu
+      second: Sekundit
+      year: Aasta
+  errors: &errors
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: peab olema heaks kiidetud
+      blank: on täitmata
+      confirmation: ei vasta kinnitusele
+      empty: on tühi
+      equal_to: peab võrdne arvuga %{count}
+      even: peab olema paarisarv
+      exclusion: on reserveeritud
+      greater_than: ei tohi olla suurem kui %{count}
+      greater_than_or_equal_to: peab olema suurem või võrdne arvuga %{count}
+      inclusion: ei leidu nimekirjas
+      invalid: ei ole korrektne
+      less_than: peab olema vähem kui %{count}
+      less_than_or_equal_to: peab olema vähem või võrdne arvuga %{count}
+      not_a_number: ei ole number
+      not_an_integer: peab olema täisarv
+      odd: peab olema paaritu arv
+      record_invalid: ! 'Valideerimine ebaõnnestus: %{errors}'
+      taken: on juba võetud
+      too_long: on liiga pikk (maksimum on %{count} tähemärki)
+      too_short: on liiga lühike (miinimum on %{count} tähemärki)
+      wrong_length: on vale pikkusega (peab olema %{count} tähemärki)
+    template:
+      body: ! 'Probleeme ilmnes järgmiste väljadega:'
+      header:
+        one: Üks viga takistas salvestamist
+        other: ! '%{count} viga takistasid salvestamist'
+  helpers:
+    select:
+      prompt: Palun valige
+    submit:
+      create: Loo uus %{model}
+      submit: Salvesta %{model}
+      update: Uuenda objekti %{model}
+  number:
+    currency:
+      format:
+        delimiter: ! ''
+        format: ! '%n %u'
+        precision: 2
+        separator: ! ','
+        significant: false
+        strip_insignificant_zeros: false
+        unit: €
+    format:
+      delimiter: ! ''
+      precision: 2
+      separator: ! ','
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: miljard
+          million: miljon
+          quadrillion: kvadriljon
+          thousand: tuhat
+          trillion: triljon
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 1
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: bait
+            other: baiti
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ' ja '
+      two_words_connector: ! ' ja '
+      words_connector: ! ', '
+  time:
+    am: enne lõunat
+    pm: pärast lõunat
+    formats:
+      default: ! '%d.%m.%Y, %H:%M'
+      full: ! '%a, %d %b %Y, %H:%M:%S %z'
+      long: ! '%d %B %Y, %H:%M'
+      short: ! '%d %b, %H:%M'
+  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+  activemodel:
+    errors:
+      <<: *errors
+  activerecord:
+    errors:
+      <<: *errors
+      
+  layouts:
+    application:
+      login: Logi sisse
+    site_menu:
+      payment: Maksmine
+      delivery: Kohaletoimetamine
+      support: Abi
+    management_menu:
+      management: Juhtimine
+      orders: Tellimused
+      products: Tooted
+      categories: Kategooriad
+      brands: Tootjad
+      users: Kasutajad
+      payment_methods: Makseviisid
+      delivery_methods: Kohaletoimetamise viisid
+      logout: Logi välja
+    sidebar:
+      categories: Kategooriad
+      brands: Tootjad
+
+  carts:
+    sidebar:
+      your_cart: Teie ostukorv
+      total_items:
+        zero: Tühi
+        one: '%{count} kaup'
+        other: '%{count} kaupa'
+      total_due: Kokku
+      view_cart: Ostukorv
+      start_checkout: Vormista
+    show:
+      clear_cart: Loobu
+      start_checkout: Vormista tellimus
+    items_in_your_cart:
+      one: 'Teie ostukorvis on %{count} kaup'
+      other: 'Teie ostukorvis on %{count} kaupa'
+
+  line_items:
+    remove_from_cart: Kustuta
+
+  products:
+    buy_now: Osta kohe
+    add_to_cart: Lisa ostukorvi
+    about_company: 'Tootja:'
+
+  buttons:
+    edit: Muuda
+    save: Salvestada
+    show: Näidata
+    destroy: Kustutada
+    new: Loo uus
+    back_to_list: Tagasi nimekirjale
+    continue: Jätka
+    start_payment: Alusta maksmist
+    login: Logi sisse
+
+  headers:
+    products: Tooted
+    new_product: Uus toode
+    edit_product: Muuda toodet
+
+    categories: Kategooriad
+    new_category: Uus kategooria
+    edit_category: Muuda kategooriat
+
+    brands: Tootjad
+    new_brand: Uus tootja
+    edit_brand: Muuda tootjat
+
+    orders: Tellimused
+    new_order: Tellimuse vormistamine
+    order: 'Tellimus #%{id}'
+
+    users: Kasutajad
+    new_user: Uus kasutaja
+    edit_user: 'Kasutaja %{name}'
+    
+    payment_methods: Makseviisid
+    new_payment_method: Uus makseviis
+    edit_payment_method: Muuda makseviisi
+    
+    delivery_methods: Kohaletoimetamise viisid
+    new_delivery_method: Uus kohaletoimetamise viis
+    edit_delivery_method: Muuda kohaletoimetamise viisi
+
+    cart: Ostukorv
+
+    login: Logi sisse
+
+  labels:
+    customer: Tellija
+    full_name: Nimi
+    address: Aadress
+    payment_method: Maksmine
+    delivery_method: Kohaletoimetamine
+    status: Staatus
+    date: Kuupäev
+    amount: Kokku
+    username: Kasutajanimi
+    password: Parool
+
+  activerecord:
+    attributes:      
+      product:
+        category: Kategooria
+        brand: Tootja
+        title: Nimetus
+        description: Kirjeldus
+        price: Hind
+
+      category:
+        name: Nimi
+        description: Kirjeldus
+
+      brand:
+        name: Nimi
+        description: Kirjeldus
+
+      order:
+        id: 'Tellimuse #'
+        first_name: Eesnimi
+        last_name: Perekonnanimi
+        phone: Kontakttelefon
+        email: E-posti aadress
+        address: Aadress (tänav, maja, korter)
+        city: Linn või küla
+        zip: Postiindeks
+        comment: Kommentaar või soov
+        created_at: Kuupäev
+        payment_method: Makseviis
+        delivery_method: Kohaletoimetamise viis
+        status: Staatus
+        total_price: Kokku
+
+      line_item:
+        quantity: Kogus
+        total_price: Summa
+
+      order_item:
+        quantity: Kogus
+        total_price: Summa
+
+      cart:
+        total_price: Kokku
+        
+      payment_method:
+        name: Nimetus
+
+      delivery_method:
+        name: Nimetus
+
+      user:
+        name: Kasutajanimi
+        password: Parool
+        password_digest: Parool
+        password_confirmation: Parool uuesti

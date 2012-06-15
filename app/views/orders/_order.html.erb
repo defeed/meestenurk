@@ -1,22 +1,24 @@
-<table class="table">
+<table class="table table-cart">
 	<thead>
 		<tr>
-			<th>Product</th>
-			<th class="cell-80px">Price</th>
-			<th class="cell-80px">Quantity</th>
-			<th class="cell-80px">Subtotal</th>
+			<th class="cell-100px">
+			<th></th>
+			<th class="cell-80px"><%= Product.human_attribute_name(:price) %></th>
+			<th class="cell-80px"><%= OrderItem.human_attribute_name(:quantity) %></th>
+			<th class="cell-100px"><%= OrderItem.human_attribute_name(:total_price) %></th>
 		</tr>
 	</thead>
 	<% @order.order_items.each do |order_item| %>
 	<tr>
+		<td><%= image_tag(order_item.product.picture.url(:small), :width => "100") %></td>
 		<td><%= "#{order_item.product.brand.name} #{order_item.product.title}"%></td>
-		<td><%= number_to_euro(order_item.product.price) %></td>
+		<td><%= number_to_currency(order_item.product.price) %></td>
 		<td>&times; <%= order_item.quantity %></td>
-		<td><%= number_to_euro(order_item.total_price) %></td>
+		<td><%= number_to_currency(order_item.total_price) %></td>
 	</tr>
 	<% end %>
-	<tr id="total_line">
-		<td colspan="3"><span class="pull-right">Total:</span></td>
-		<td><%= number_to_euro(@order.total_price) %></td>
+	<tr class="lead">
+		<td colspan="4"><span class="pull-right"><%= Order.human_attribute_name(:total_price) %>:</span></td>
+		<td><%= number_to_currency(@order.total_price) %></td>
 	</tr>
 </table>

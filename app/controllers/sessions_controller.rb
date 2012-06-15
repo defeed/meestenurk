@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   before_filter :get_cart
   
   def new
-    @title = "Log In"
+    @title = t('headers.login')
     
     if current_user
       redirect_to store_url, notice: "You are already logged in."
@@ -11,6 +11,8 @@ class SessionsController < ApplicationController
   end
 
   def create
+    @title = t('headers.login')
+    
     user = User.find_by_name(params[:name])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id

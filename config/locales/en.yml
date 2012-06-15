@@ -1,50 +1,364 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  payment: "Payment"
-  delivery: "Delivery"
-  support: "Support"
-  management: "Management"
-  orders: "Orders"
-  products: "Products"
-  categories: "Categories"
-  brands: "Brands"
-  users: "Users"
-  payment_methods: "Payment Methods"
-  delivery_methods: "Delivery Methods"
-  logout: "Log Out"
-  search: "Search"
-  your_cart: "Your Cart"
-  in_your_cart: "Your Cart:"
-  total_items:
-    zero: "Empty"
-    one: "1 Item"
-    other: "%{count} Items"
-  total_due: "Total Due"
-  view_cart_and_checkout: "View Cart and Checkout"
-  view_cart: "View Cart"
-  start_checkout_sidebar: "Checkout"
-  browse_by_category: "Browse by Category"
-  browse_by_brand: "Browse by Brand"
-  total_due: "Total Due"
-  buy_now: "Buy Now"
-  add_to_cart: "Add to Cart"
-  new_order: "New Order"
-  form_save: "Save"
-  about_company: "About"
-  edit_product: "Edit Product"
-  clear_cart: "Clear"
-  start_checkout: "Checkout"
-  start_payment: "Start Payment"
+  date:
+    abbr_day_names:
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    abbr_month_names:
+    - 
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+    day_names:
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    formats:
+      default: ! '%Y-%m-%d'
+      long: ! '%B %d, %Y'
+      short: ! '%b %d'
+    month_names:
+    - 
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_days:
+        one: 1 day
+        other: ! '%{count} days'
+      x_minutes:
+        one: 1 minute
+        other: ! '%{count} minutes'
+      x_months:
+        one: 1 month
+        other: ! '%{count} months'
+      x_seconds:
+        one: 1 second
+        other: ! '%{count} seconds'
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  errors: &errors
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: must be accepted
+      blank: can't be blank
+      confirmation: doesn't match confirmation
+      empty: can't be empty
+      equal_to: must be equal to %{count}
+      even: must be even
+      exclusion: is reserved
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater than or equal to %{count}
+      inclusion: is not included in the list
+      invalid: is invalid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      odd: must be odd
+      record_invalid: ! 'Validation failed: %{errors}'
+      taken: has already been taken
+      too_long:
+        one: is too long (maximum is 1 character)
+        other: is too long (maximum is %{count} characters)
+      too_short:
+        one: is too short (minimum is 1 character)
+        other: is too short (minimum is %{count} characters)
+      wrong_length:
+        one: is the wrong length (should be 1 character)
+        other: is the wrong length (should be %{count} characters)
+    template:
+      body: ! 'There were problems with the following fields:'
+      header:
+        one: 1 error occured
+        other: ! '%{count} errors occured'
+  helpers:
+    select:
+      prompt: Please select
+    submit:
+      create: Create %{model}
+      submit: Save %{model}
+      update: Update %{model}
+  number:
+    currency:
+      format:
+        delimiter: ! ''
+        format: ! '%n %u'
+        precision: 2
+        separator: ','
+        significant: false
+        strip_insignificant_zeros: false
+        unit: €
+    format:
+      delimiter: ! ''
+      precision: 3
+      separator: ','
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ', and '
+      two_words_connector: ! ' and '
+      words_connector: ! ', '
+  time:
+    am: am
+    pm: pm
+    formats:
+      default: ! '%d.%m.%Y, %H:%M'
+      full: ! '%a, %d %b %Y, %H:%M:%S %z'
+      long: ! '%d %B %Y, %H:%M'
+      short: ! '%d %b, %H:%M'
+  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+  activemodel:
+    errors:
+      <<: *errors
   activerecord:
-    attributes:
-      user:
-        password_digest: "Password"
-      line_item:
-        total_price: "Subtotal"
-      cart:
-        total_price: "Total"
+    errors:
+      <<: *errors
+
+
+  layouts:
+    application:
+      login: Log In
+    site_menu:
+      payment: Payment
+      delivery: Delivery
+      support: Support
+    management_menu:
+      management: Management
+      orders: Orders
+      products: Products
+      categories: Categories
+      brands: Brands
+      users: Users
+      payment_methods: Payment Methods
+      delivery_methods: Delivery Methods
+      logout: Log Out
+    sidebar:
+      categories: Categories
+      brands: Brands
+
+  carts:
+    sidebar:
+      your_cart: Your Cart
+      total_items:
+        zero: Empty
+        one: '%{count} Item'
+        other: '%{count} Items'
+      total_due: Total
+      view_cart: View Cart
+      start_checkout: Checkout
+    show:
+      clear_cart: Clear Cart
+      start_checkout: Proceed to Checkout
+    items_in_your_cart:
+      one: 'You have %{count} item in your cart'
+      other: 'You have %{count} items in your cart'
+
+  line_items:
+    remove_from_cart: Remove from Cart
+
+  products:
+    buy_now: Buy Now
+    add_to_cart: Add to Cart
+    about_company: About
+
+  buttons:
+    edit: Edit
+    save: Save
+    show: Show
+    destroy: Delete
+    new: Create New
+    back_to_list: Back to List
+    continue: Continue
+    start_payment: Start Payment
+    login: Log In
+
+  headers:
+    products: Products
+    new_product: New Product
+    edit_product: Edit Product
+
+    categories: Categories
+    new_category: New Category
+    edit_category: Edit Category
+
+    brands: Brands
+    new_brand: New Brand
+    edit_brand: Edit Brand
+
+    orders: Orders
+    new_order: New Order
+    order: 'Order #%{id}'
+
+    users: Users
+    new_user: New User
+    edit_user: 'User %{name}'
+    
+    payment_methods: Payment Methods
+    new_payment_method: New Payment Method
+    edit_payment_method: Edit Payment Method
+    
+    delivery_methods: Delivery Methods
+    new_delivery_method: New Delivery Method
+    edit_delivery_method: Edit Delivery Method
+
+    cart: Cart
+
+    login: Log In
+
+  labels:
+    customer: Customer
+    full_name: Full Name
+    address: Address
+    payment_method: Payment
+    delivery_method: Delivery
+    status: Status
+    date: Date
+    amount: Amount
+    username: Username
+    password: Password
+
+  activerecord:
+    attributes:      
+      product:
+        category: Category
+        brand: Brand
+        title: Title
+        description: Description
+        price: Price
+
+      category:
+        name: Name
+        description: Description
+
+      brand:
+        name: Name
+        description: Description
+
       order:
-        email: "E-mail address"
-        zip: "Postcode"
+        id: 'Order #'
+        first_name: First Name
+        last_name: Last Name
+        phone: Phone
+        email: E-mail
+        address: Address (street, building, apartment)
+        city: City or Village
+        zip: Postal Code
+        comment: Comment
+        created_at: Date
+        payment_method: Payment Method
+        delivery_method: Delivery Method
+        status: Status
+        total_price: Total Price
+
+      line_item:
+        quantity: Quantity
+        total_price: Subtotal
+
+      order_item:
+        quantity: Quantity
+        total_price: Subtotal
+
+      cart:
+        total_price: Total
+        
+      payment_method:
+        name: Name
+
+      delivery_method:
+        name: Name
+
+      user:
+        name: Username
+        password: Password
+        password_confirmation: Password Confirmation

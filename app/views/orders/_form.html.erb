@@ -2,7 +2,7 @@
   <% if @order.errors.any? %>
     <div class="alert alert-error">
 			<a class="close" data-dismiss="alert" href="#">×</a>
-      <h4 class="alert-heading">Oh snap! We got <%= pluralize(@order.errors.count, "problem") %> here. Fix them and we're fine.</h4>
+      <h4 class="alert-heading"><%= t('errors.template.header', :count => @order.errors.count) %></h4>
 
       <ul>
       <% @order.errors.full_messages.each do |msg| %>
@@ -84,7 +84,7 @@
 		</div>
 		
 		<div class="control-group">
-    	<%= f.submit "#{t :start_payment}", :class => "btn btn-success" %>
+    	<%= f.submit "#{t 'buttons.continue'}", :class => "btn btn-success btn-large" %>
 		</div>
 	</fieldset>
 <% end %>

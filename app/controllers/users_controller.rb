@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.order(:id)
+    @title = t('headers.users')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -17,6 +18,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @title = @user.name
 
     respond_to do |format|
       format.html # show.html.erb
@@ -28,6 +30,7 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
+    @title = t('headers.new_user')
 
     respond_to do |format|
       format.html # new.html.erb
@@ -38,12 +41,14 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
+    @title = @user.name
   end
 
   # POST /users
   # POST /users.json
   def create
     @user = User.new(params[:user])
+    @title = t('headers.new_user')
 
     respond_to do |format|
       if @user.save

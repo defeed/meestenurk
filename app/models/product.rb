@@ -9,7 +9,7 @@ class Product < ActiveRecord::Base
   
   before_destroy :ensure_not_referenced_by_any_line_item
   
-  validates :title, :description, :presence => true
+  validates :title, :description, :category, :brand, :presence => true
   validates :title, :uniqueness => true, :length => { :minimum => 5 }
   validates :price, :numericality => { greater_than_or_equal_to: 0.10 }
   validates_attachment_content_type :picture,
@@ -23,7 +23,7 @@ class Product < ActiveRecord::Base
                       :large  => "500x500" },
                     :default_url => "/assets/missing_:style.png"
   
-  translates :title, :description
+  translates :description
   
   private
   

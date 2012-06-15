@@ -3,10 +3,10 @@
 		<%= link_to image_tag(product.picture.url(:small), :alt => "#{product.brand.name} #{product.title}", :title => "#{product.brand.name} #{product.title}"), product %>
     <h4 class="title"><%= link_to "#{product.brand.name} #{product.title}", product %></h4>
     <div class="buy">
-    	<p><span class="price"><%= number_to_euro(product.price) %></span></p>
+    	<p class="lead"><%= number_to_currency(product.price) %></p>
 			<p>
-				<%= button_to "#{t :buy_now}", line_items_path(:product_id => product), :class => "btn btn-success" %>
-				<%= button_to "#{t :add_to_cart}", line_items_path(:product_id => product), :class => "btn", :remote => true %>
+				<%= button_to "#{t 'products.buy_now'}", line_items_path(:product_id => product), :class => "btn btn-success" %>
+				<%= button_to "#{t 'products.add_to_cart'}", line_items_path(:product_id => product), :class => "btn", :remote => true %>
 			</p>
     </div>
   </div>

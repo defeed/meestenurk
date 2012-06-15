@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
-    @title = "Products"
+    @title = t('headers.products')
     
     respond_to do |format|
       format.html # index.html.erb
@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
   # GET /products/new.json
   def new
     @product = Product.new
-    @title = "New Product"
+    @title = t('headers.new_product')
     
     respond_to do |format|
       format.html # new.html.erb
@@ -48,7 +48,7 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(params[:product])
-    @title = "New Product"
+    @title = t('headers.new_product')
 
     respond_to do |format|
       if @product.save

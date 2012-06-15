@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @title = "Categories"
+    @title = t('headers.categories')
     
     respond_to do |format|
       format.html # index.html.erb
@@ -31,7 +31,7 @@ class CategoriesController < ApplicationController
   # GET /categories/new.json
   def new
     @category = Category.new
-    @title = "New Category"
+    @title = t('headers.add_category')
 
     respond_to do |format|
       format.html # new.html.erb
@@ -49,6 +49,7 @@ class CategoriesController < ApplicationController
   # POST /categories.json
   def create
     @category = Category.new(params[:category])
+    @title = t('headers.add_category')
 
     respond_to do |format|
       if @category.save

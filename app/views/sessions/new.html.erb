@@ -2,21 +2,23 @@
 	<%= form_tag sessions_path do %>
 	<fieldset>	
 		<div class="control-group">
-	  	<%= label_tag :name, "Username", :class => "control-label" %>
+	  	<%= label_tag :name, t('labels.username'),:class => "control-label" %>
 	  	<div class="controls">
 	  		<%= text_field_tag :name, params[:name] %>
 	  	</div>
 		</div>
 
 		<div class="control-group">
-	  	<%= label_tag :password, "Password", :class => "control-label" %>
+	  	<%= label_tag :password, t('labels.password'), :class => "control-label" %>
 	  	<div class="controls">
 	  		<%= password_field_tag :password %>
 	  	</div>
 		</div>
 
-		<div class="form-actions">
-	  	<%= submit_tag "Login", :class => "btn btn-primary" %>
+		<div class="control-group">
+	  	<div class="controls">
+	  		<%= submit_tag t('buttons.login'), :class => "btn btn-large" %>
+	  	</div>
 		</div>
 	</fieldset>
 	<% end %>

@@ -1,5 +1,5 @@
 <div class="span9">
-	<h1>Order #<%= @order.id %></h1>
+	<h1><%= t 'headers.order', :id => @order.id %></h1>
 	<hr>
 	<%= render @order %>
 	
@@ -15,6 +15,6 @@
 		<%= hidden_field_tag("VK_REF", "") %>
 		<%= hidden_field_tag("VK_MSG", "Meestenurk Order #{@order.id}") %>
 		<%= hidden_field_tag("VK_RETURN", "#{order_url(@order)}/notify") %>
-		<%= submit_tag "Pay for Order", :class => "btn-success btn-large" %>
+		<%= submit_tag t('buttons.start_payment'), :class => "btn btn-success btn-large" %>
 	<% end %>
 </div>
