@@ -29,6 +29,7 @@
           <%= link_to "Meestenurk", store_url, :class => "brand" %>
           <div class="nav-collapse">
             <%= render 'layouts/site_menu' %>
+						<%= render 'layouts/search_form' %>
 						<%= render 'layouts/language_select' %>
           </div>
         </div>
@@ -36,6 +37,16 @@
     </div>
 
     <div class="container">
+			<div class="row">
+				<div class="span3" id="logo">
+					<%= image_tag('meestenurk-logo4.png', :width => '100%') %>
+				</div>
+				<div class="span9">
+				<% unless "carts" == controller.controller_name %>
+					<%= render :partial => 'carts/top' %>
+				<% end %>
+				</div>
+			</div>
       <div class="row">
         <%= render 'layouts/sidebar' %>
 				<%= render 'layouts/messages' %>

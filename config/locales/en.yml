@@ -228,15 +228,10 @@ en:
       brands: Brands
 
   carts:
-    sidebar:
-      your_cart: Your Cart
-      total_items:
-        zero: Empty
-        one: '%{count} Item'
-        other: '%{count} Items'
-      total_due: Total
-      view_cart: View Cart
+    top:
+      your_cart: Shopping Cart
       start_checkout: Checkout
+      empty_cart: Shopping cart is empty
     show:
       clear_cart: Clear Cart
       start_checkout: Proceed to Checkout
@@ -307,6 +302,7 @@ en:
     amount: Amount
     username: Username
     password: Password
+    search: Search
 
   activerecord:
     attributes:      

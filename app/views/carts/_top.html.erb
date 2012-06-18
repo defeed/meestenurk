@@ -1,0 +1,12 @@
+<p class="pull-right" id="cart">
+	<% if @cart.line_items.empty? %>
+		<%= content_tag(:i, "", :class => "icon-shopping-cart") %> <%= t '.empty_cart' %>
+	<% else %>
+		<%= link_to cart_path(@cart), :class => "btn" do %>
+			<%= content_tag(:i, "", :class => "icon-shopping-cart") %> <%= t '.your_cart' %> (<%= number_to_currency(@cart.total_price) %>)
+		<% end %>
+		<% unless "orders" == controller.controller_name %>
+			<%= link_to t('.start_checkout'), new_order_path, :class => "btn btn-success" %>
+		<% end %>
+	<% end %>
+</p>

@@ -69,8 +69,8 @@ li>i { margin-left: -16px; }
 	}
 }
 
-#cart {
-	padding: 20px;
+#logo {
+	margin-bottom: 20px;
 }
 
 .table-cart td {
@@ -78,6 +78,11 @@ li>i { margin-left: -16px; }
 	img {
 		display: inline;
 	}
+}
+
+.quantity {
+	font-weight: bold;
+	padding: 0 5px;
 }
 
 @import "bootstrap";

@@ -279,19 +279,12 @@ ru:
       brands: Бренды
   
   carts:
-    sidebar:
-      your_cart: Ваша корзина
-      total_items:
-        zero: Пусто
-        one: '%{count} товар'
-        few: '%{count} товара'
-        many: '%{count} товаров'
-        other: '%{count} товара'
-      total_due: К оплате
-      view_cart: Корзина
-      start_checkout: Оформить
+    top:
+      your_cart: Корзина
+      start_checkout: Оформить заказ
+      empty_cart: Корзина пуста
     show:
-      clear_cart: "Очистить"
+      clear_cart: "Очистить корзину"
       start_checkout: "Оформить заказ"
     items_in_your_cart:
       one: 'В вашей корзине %{count} товар'
@@ -362,6 +355,7 @@ ru:
     amount: Сумма
     username: Имя пользователя
     password: Пароль
+    search: Поиск
     
   activerecord:
     attributes:      

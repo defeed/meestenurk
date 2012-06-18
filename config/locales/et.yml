@@ -135,7 +135,7 @@ et:
     currency:
       format:
         delimiter: ! ''
-        format: ! '%n %u'
+        format: ! '%n&nbsp;%u'
         precision: 2
         separator: ! ','
         significant: false
@@ -221,15 +221,10 @@ et:
       brands: Tootjad
 
   carts:
-    sidebar:
-      your_cart: Teie ostukorv
-      total_items:
-        zero: Tühi
-        one: '%{count} kaup'
-        other: '%{count} kaupa'
-      total_due: Kokku
-      view_cart: Ostukorv
-      start_checkout: Vormista
+    top:
+      your_cart: Ostukorv
+      start_checkout: Vormista tellimus
+      empty_cart: Ostukorv on tühi
     show:
       clear_cart: Loobu
       start_checkout: Vormista tellimus
@@ -300,6 +295,7 @@ et:
     amount: Kokku
     username: Kasutajanimi
     password: Parool
+    search: Otsing
 
   activerecord:
     attributes:      
