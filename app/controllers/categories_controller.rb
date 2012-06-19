@@ -31,7 +31,7 @@ class CategoriesController < ApplicationController
   # GET /categories/new.json
   def new
     @category = Category.new
-    @title = t('headers.add_category')
+    @title = t('headers.new_category')
 
     respond_to do |format|
       format.html # new.html.erb
@@ -49,7 +49,7 @@ class CategoriesController < ApplicationController
   # POST /categories.json
   def create
     @category = Category.new(params[:category])
-    @title = t('headers.add_category')
+    @title = t('headers.new_category')
 
     respond_to do |format|
       if @category.save
