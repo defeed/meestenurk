@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120615064236) do
+ActiveRecord::Schema.define(:version => 20120618122923) do
 
   create_table "brand_translations", :force => true do |t|
     t.integer  "brand_id"

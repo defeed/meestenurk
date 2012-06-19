@@ -30,9 +30,9 @@ Meestenurk::Application.routes.draw do
     match '/logout' => 'sessions#destroy'
   end
   
-  # /#{I18n.default_locale}
-  match '*path', :to => redirect("/et/%{path}")
-  match '', :to => redirect("/et")
+  # 
+  match '*path', :to => redirect("/#{I18n.default_locale}/%{path}")
+  match '', :to => redirect("/#{I18n.default_locale}")
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
