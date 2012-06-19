@@ -17,8 +17,7 @@ BASHRC
     run %q{export PATH="$HOME/.rbenv/bin:$PATH"}
     run %q{eval "$(rbenv init -)"}
     run "#{sudo} apt-get -y install build-essential"
-    run "#{sudo} apt-get -y install zlib1g-dev libssl-dev"
-    run "#{sudo} apt-get -y install libreadline-gplv2-dev"
+    run "#{sudo} apt-get -y install zlib1g-dev libssl-dev libreadline-gplv2-dev libxml2-dev libxslt-dev"
     run "rbenv install #{ruby_version}"
     run "rbenv global #{ruby_version}"
     run "gem install bundler --no-ri --no-rdoc"
